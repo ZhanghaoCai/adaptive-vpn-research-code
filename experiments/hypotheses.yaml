@@ -1,0 +1,61 @@
+schema_version: 1.0.0
+analysis_population: complete-registered-runs
+experimental_unit: run
+evidence_schema_version: 1.2.0
+cell_identity: >-
+  A registered schedule cell is identified by deterministic UUIDv5 cell_id. A
+  physical execution is identified by UUIDv4 attempt_id and is not a new
+  experimental unit.
+attempt_policy:
+  max_attempts_per_cell: 2
+  terminal_rule: >-
+    Select exactly one terminal complete attempt per registered cell. Retain
+    every incomplete predecessor and require contiguous attempt numbers.
+  resume_rule: >-
+    Resume only under the same dataset, schedule, configuration, and committed
+    code scope. Allocate a fresh attempt_id and record supersedes_attempt_id.
+blocking_gate:
+  name: Gate1-trusted-remote-identity
+  status: blocked
+  requirement: >-
+    Out-of-band SSH host-key fingerprints must be supplied and pinned before
+    any remote session, installation, service deployment, qdisc mutation, or
+    field measurement.
+  empirical_claims_allowed: false
+blocking_factors:
+  - block
+  - scenario_id
+  - traffic_profile_id
+confirmatory_family:
+  correction: holm
+  alpha: 0.05
+  contrasts:
+    - contrast_id: adaptive-vs-static-loss
+      endpoint: loss_pct
+      direction: lower
+      paired_by: [block, scenario_id, traffic_profile_id]
+    - contrast_id: adaptive-vs-static-mean-rtt
+      endpoint: mean_rtt_ms
+      direction: lower
+      paired_by: [block, scenario_id, traffic_profile_id]
+    - contrast_id: adaptive-vs-threshold-loss
+      endpoint: loss_pct
+      direction: lower
+      paired_by: [block, scenario_id, traffic_profile_id]
+    - contrast_id: adaptive-vs-threshold-mean-rtt
+      endpoint: mean_rtt_ms
+      direction: lower
+      paired_by: [block, scenario_id, traffic_profile_id]
+secondary_endpoints:
+  - jitter_ms
+  - longest_disruption_ms
+  - switch_count
+missing_data_policy: >-
+  Confirmatory analysis requires every registered run. Apparatus failures are
+  retained as incomplete evidence and trigger investigation or rerun under the
+  same frozen cell identity. A rerun receives a new UUIDv4 attempt_id and an
+  explicit supersedes_attempt_id; it is never replaced by generated
+  observations, silently overwritten, or counted twice.
+outlier_policy: >-
+  No measured run is removed solely because of an extreme endpoint. Protocol or
+  attribution failures are reported by quality control before analysis.

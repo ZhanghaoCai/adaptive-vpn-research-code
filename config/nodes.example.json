@@ -1,0 +1,28 @@
+{
+  "nodes": {
+    "edge-a": {
+      "host": "192.0.2.10",
+      "location": "Example region A",
+      "region": "example-a",
+      "ssh_user": "admin",
+      "identity_file": "~/.ssh/id_ed25519",
+      "roles": ["server"]
+    },
+    "edge-b": {
+      "host": "198.51.100.20",
+      "location": "Example region B",
+      "region": "example-b",
+      "ssh_user": "admin",
+      "identity_file": "~/.ssh/id_ed25519",
+      "roles": ["server"]
+    },
+    "client": {
+      "host": "203.0.113.30",
+      "location": "Example client vantage",
+      "region": "example-client",
+      "ssh_user": "",
+      "identity_file": "",
+      "roles": ["client"]
+    }
+  }
+}

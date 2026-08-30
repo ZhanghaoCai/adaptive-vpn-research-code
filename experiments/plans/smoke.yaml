@@ -1,0 +1,11 @@
+include: ../../config/system_config.yaml
+dataset_id: smoke-20260804
+blocks: 1
+scenario_ids:
+  - latency-step
+traffic_profile_ids:
+  - video-low
+campaign_stage: smoke
+schedule_path: smoke.0dc64dd724822d22b15cce0028008e1febd3ce28ea618ab6353423b7ca648cdc.schedule.json
+schedule_sha256: "0dc64dd724822d22b15cce0028008e1febd3ce28ea618ab6353423b7ca648cdc"
+max_attempts_per_cell: 2

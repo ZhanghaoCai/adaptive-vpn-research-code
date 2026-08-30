@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/adaptive-vpn/run-manifest-v1.0.schema.json",
+  "title": "Adaptive VPN run manifest v1.0 (legacy read compatibility)",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "run_id",
+    "dataset_id",
+    "strategy",
+    "scenario",
+    "traffic_profile",
+    "block",
+    "schedule_seed",
+    "status",
+    "evidence_sha256"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "run_id": {
+      "type": "string",
+      "format": "uuid",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[45][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "dataset_id": {"type": "string", "minLength": 1, "pattern": "\\S"},
+    "strategy": {"enum": ["static", "threshold", "adaptive"]},
+    "scenario": {"type": "string", "minLength": 1, "pattern": "\\S"},
+    "traffic_profile": {"type": "string", "minLength": 1, "pattern": "\\S"},
+    "block": {"type": "integer", "minimum": 1},
+    "schedule_seed": {"type": "integer", "minimum": 0, "maximum": 9223372036854775807},
+    "status": {"enum": ["complete", "incomplete"]},
+    "failure_reason": {"type": ["string", "null"]},
+    "evidence_sha256": {
+      "type": "object",
+      "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+    }
+  },
+  "x-secret-boundary": {
+    "normalization": ["trim", "lowercase", "hyphen_to_underscore"],
+    "forbidden_normalized_keys": [
+      "access_token",
+      "api_secret",
+      "auth_token",
+      "client_secret",
+      "credential",
+      "credentials",
+      "password",
+      "private_key"
+    ],
+    "forbidden_normalized_suffixes": ["_credential"],
+    "scope": "all_nested_object_keys"
+  },
+  "x-bundle-policy": "evidence-bundle-policy.schema.json",
+  "additionalProperties": true
+}

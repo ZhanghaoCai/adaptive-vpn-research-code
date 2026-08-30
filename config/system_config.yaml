@@ -1,0 +1,136 @@
+# Authoritative parameters for the controlled real-packet WireGuard experiment.
+# delay_ms is the registered end-to-end RTT contribution; the lab applies half
+# to each direction. Traffic labels describe packet loads, not vendor traces.
+schema_version: 1.1.0
+dataset_id: main-20260804
+namespace_prefix: avpn
+paths:
+  - path_id: path-a
+    path_index: 0
+  - path_id: path-b
+    path_index: 1
+  - path_id: path-c
+    path_index: 2
+strategies:
+  - static
+  - threshold
+  - adaptive
+traffic_profiles:
+  - profile_id: video-low
+    packet_rate_hz: 50
+    datagram_size: 800
+    response_timeout_ms: 500
+  - profile_id: video-high
+    packet_rate_hz: 100
+    datagram_size: 1200
+    response_timeout_ms: 500
+measurement:
+  window_duration_s: 1.0
+  duplicate_drain_ms: 50
+  monitor_packet_rate_hz: 20
+  monitor_packets_per_window: 10
+  monitor_datagram_size: 128
+  echo_port: 39993
+scoring:
+  latency: 0.4
+  jitter: 0.3
+  loss: 0.3
+  latency_threshold_ms: 300
+  jitter_threshold_ms: 80
+  loss_threshold_pct: 5
+switching:
+  min_score_threshold: 0.8
+  score_improvement_margin: 0.10
+  min_switch_interval_s: 0.5
+  sustained_degradation_s: 1.0
+  max_switches_per_hour: 60
+  threshold_rtt_ms: 150
+  threshold_loss_pct: 2
+  threshold_hold_s: 1.0
+scenarios:
+  - scenario_id: baseline
+    phases:
+      - phase_id: steady
+        duration_s: 12
+        paths:
+          path-a: {delay_ms: 20, jitter_ms: 2, loss_pct: 0.1, loss_correlation_pct: 0}
+          path-b: {delay_ms: 45, jitter_ms: 3, loss_pct: 0.2, loss_correlation_pct: 0}
+          path-c: {delay_ms: 65, jitter_ms: 4, loss_pct: 0.3, loss_correlation_pct: 0}
+  - scenario_id: latency-step
+    phases:
+      - phase_id: pre-change
+        duration_s: 4
+        paths:
+          path-a: {delay_ms: 20, jitter_ms: 2, loss_pct: 0.1, loss_correlation_pct: 0}
+          path-b: {delay_ms: 45, jitter_ms: 3, loss_pct: 0.2, loss_correlation_pct: 0}
+          path-c: {delay_ms: 65, jitter_ms: 4, loss_pct: 0.3, loss_correlation_pct: 0}
+      - phase_id: path-a-high-latency
+        duration_s: 8
+        paths:
+          path-a: {delay_ms: 240, jitter_ms: 8, loss_pct: 0.1, loss_correlation_pct: 0}
+          path-b: {delay_ms: 45, jitter_ms: 3, loss_pct: 0.2, loss_correlation_pct: 0}
+          path-c: {delay_ms: 65, jitter_ms: 4, loss_pct: 0.3, loss_correlation_pct: 0}
+  - scenario_id: jitter-step
+    phases:
+      - phase_id: pre-change
+        duration_s: 4
+        paths:
+          path-a: {delay_ms: 20, jitter_ms: 2, loss_pct: 0.1, loss_correlation_pct: 0}
+          path-b: {delay_ms: 45, jitter_ms: 3, loss_pct: 0.2, loss_correlation_pct: 0}
+          path-c: {delay_ms: 65, jitter_ms: 4, loss_pct: 0.3, loss_correlation_pct: 0}
+      - phase_id: path-a-high-jitter
+        duration_s: 8
+        paths:
+          path-a: {delay_ms: 80, jitter_ms: 70, loss_pct: 0.1, loss_correlation_pct: 0}
+          path-b: {delay_ms: 45, jitter_ms: 3, loss_pct: 0.2, loss_correlation_pct: 0}
+          path-c: {delay_ms: 65, jitter_ms: 4, loss_pct: 0.3, loss_correlation_pct: 0}
+  - scenario_id: random-loss
+    phases:
+      - phase_id: pre-change
+        duration_s: 4
+        paths:
+          path-a: {delay_ms: 20, jitter_ms: 2, loss_pct: 0.1, loss_correlation_pct: 0}
+          path-b: {delay_ms: 45, jitter_ms: 3, loss_pct: 0.2, loss_correlation_pct: 0}
+          path-c: {delay_ms: 65, jitter_ms: 4, loss_pct: 0.3, loss_correlation_pct: 0}
+      - phase_id: path-a-random-loss
+        duration_s: 8
+        paths:
+          path-a: {delay_ms: 20, jitter_ms: 2, loss_pct: 8, loss_correlation_pct: 0}
+          path-b: {delay_ms: 45, jitter_ms: 3, loss_pct: 0.2, loss_correlation_pct: 0}
+          path-c: {delay_ms: 65, jitter_ms: 4, loss_pct: 0.3, loss_correlation_pct: 0}
+  - scenario_id: burst-loss
+    phases:
+      - phase_id: pre-change
+        duration_s: 4
+        paths:
+          path-a: {delay_ms: 20, jitter_ms: 2, loss_pct: 0.1, loss_correlation_pct: 0}
+          path-b: {delay_ms: 45, jitter_ms: 3, loss_pct: 0.2, loss_correlation_pct: 0}
+          path-c: {delay_ms: 65, jitter_ms: 4, loss_pct: 0.3, loss_correlation_pct: 0}
+      - phase_id: path-a-correlated-loss
+        duration_s: 8
+        paths:
+          path-a: {delay_ms: 20, jitter_ms: 2, loss_pct: 8, loss_correlation_pct: 70}
+          path-b: {delay_ms: 45, jitter_ms: 3, loss_pct: 0.2, loss_correlation_pct: 0}
+          path-c: {delay_ms: 65, jitter_ms: 4, loss_pct: 0.3, loss_correlation_pct: 0}
+  - scenario_id: compound
+    phases:
+      - phase_id: pre-change
+        duration_s: 4
+        paths:
+          path-a: {delay_ms: 20, jitter_ms: 2, loss_pct: 0.1, loss_correlation_pct: 0}
+          path-b: {delay_ms: 45, jitter_ms: 3, loss_pct: 0.2, loss_correlation_pct: 0}
+          path-c: {delay_ms: 65, jitter_ms: 4, loss_pct: 0.3, loss_correlation_pct: 0}
+      - phase_id: path-a-degrades
+        duration_s: 4
+        paths:
+          path-a: {delay_ms: 220, jitter_ms: 45, loss_pct: 5, loss_correlation_pct: 40}
+          path-b: {delay_ms: 45, jitter_ms: 3, loss_pct: 0.2, loss_correlation_pct: 0}
+          path-c: {delay_ms: 65, jitter_ms: 4, loss_pct: 0.3, loss_correlation_pct: 0}
+      - phase_id: path-b-degrades
+        duration_s: 4
+        paths:
+          path-a: {delay_ms: 220, jitter_ms: 45, loss_pct: 5, loss_correlation_pct: 40}
+          path-b: {delay_ms: 260, jitter_ms: 55, loss_pct: 6, loss_correlation_pct: 50}
+          path-c: {delay_ms: 65, jitter_ms: 4, loss_pct: 0.3, loss_correlation_pct: 0}
+blocks: 12
+schedule_seed: 20260803

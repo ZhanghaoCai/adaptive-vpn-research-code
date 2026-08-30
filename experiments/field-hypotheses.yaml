@@ -1,0 +1,211 @@
+schema_version: 2.0.0
+protocol_version: field-2.0-plan
+status: proposed-before-any-remote-observation
+
+carrier_inference:
+  primary_confirmatory_carrier: wireguard-udp
+  compatibility_carrier: wireguard-over-wss
+  pairing_rule: hold-carrier-id-constant-within-every-pair-or-stratum
+  reporting_rule: carrier-specific-estimates-never-pooled-or-substituted
+  compatibility_inference: estimation-only-secondary-family
+
+evidence_populations:
+  stage_a: every-registered-complete-full-mesh-session
+  stage_b: every-registered-complete-policy-run
+  stage_c: every-registered-complete-meeting-session
+  packet_or_stats_sample_is_independent_replicate: false
+
+stage_a_network_family:
+  independent_cluster: relationship
+  confirmatory_cluster_count: 39
+  pairing:
+    - relationship_id
+    - scenario_id
+    - temporal_block
+    - directed_media_leg
+    - carrier_id
+  alpha: 0.05
+  multiplicity: holm-within-this-two-test-family
+  confirmatory_carrier: wireguard-udp
+  compatibility_reporting: >-
+    The WSS carrier is retained as a separately labelled, carrier-specific
+    estimation population. It is not pooled into, or used to backfill, the
+    confirmatory WireGuard-UDP contrasts.
+  contrasts:
+    - contrast_id: native-ipv6-vs-ipv4-control-mean-rtt-noninferiority
+      comparison: native-outer-ipv6-minus-native-outer-ipv4
+      filter: {scenario_id: normal-control}
+      endpoint: mean_rtt_ms
+      hypothesis: noninferiority
+      upper_margin: 15
+      margin_unit: ms
+    - contrast_id: native-ipv6-vs-ipv4-control-loss-noninferiority
+      comparison: native-outer-ipv6-minus-native-outer-ipv4
+      filter: {scenario_id: normal-control}
+      endpoint: loss_pct
+      hypothesis: noninferiority
+      upper_margin: 0.5
+      margin_unit: percentage-points
+  interpretation: >-
+    Failure of noninferiority is not evidence that IPv6 is universally worse.
+    Results are conditional on relationships with genuine native dual-stack
+    reachability and the frozen collection windows.
+
+stage_b_policy_family:
+  independent_cluster: client-source
+  confirmatory_cluster_count: 10
+  pairing:
+    - client_source
+    - outer_ip_family
+    - scenario_id
+    - meeting_profile
+    - temporal_block
+    - carrier_id
+  alpha: 0.05
+  multiplicity: holm-within-this-six-test-family
+  confirmatory_carrier: wireguard-udp
+  compatibility_reporting: >-
+    Policy estimates are reported separately for each carrier. Confirmatory
+    p-values use the registered WireGuard-UDP carrier; WSS is a secondary
+    compatibility estimate and remains labelled in every table and figure.
+  dynamic_scenarios:
+    - railway-mobile-path-change
+    - sudden-outage-handoff
+  contrasts:
+    - contrast_id: adaptive-vs-static-dynamic-video-freeze
+      comparison: adaptive-minus-static
+      endpoint: video_freeze_ratio
+      hypothesis: superiority
+      favourable_direction: lower
+    - contrast_id: adaptive-vs-threshold-dynamic-video-freeze
+      comparison: adaptive-minus-threshold
+      endpoint: video_freeze_ratio
+      hypothesis: superiority
+      favourable_direction: lower
+    - contrast_id: adaptive-vs-static-dynamic-rtp-loss
+      comparison: adaptive-minus-static
+      endpoint: inbound_rtp_loss_pct
+      hypothesis: superiority
+      favourable_direction: lower
+    - contrast_id: adaptive-vs-threshold-dynamic-rtp-loss
+      comparison: adaptive-minus-threshold
+      endpoint: inbound_rtp_loss_pct
+      hypothesis: superiority
+      favourable_direction: lower
+    - contrast_id: adaptive-vs-static-control-video-freeze-noninferiority
+      comparison: adaptive-minus-static
+      filter: {scenario_id: normal-control}
+      endpoint: video_freeze_ratio
+      hypothesis: noninferiority
+      upper_margin: 0.01
+      margin_unit: proportion-of-session
+    - contrast_id: adaptive-vs-static-control-rtp-loss-noninferiority
+      comparison: adaptive-minus-static
+      filter: {scenario_id: normal-control}
+      endpoint: inbound_rtp_loss_pct
+      hypothesis: noninferiority
+      upper_margin: 0.5
+      margin_unit: percentage-points
+  exact_test_note: >-
+    Ten client clusters give 1,024 exact sign assignments. Temporal blocks,
+    server observations, address families, scenarios, media samples, RTP packets,
+    and one-second getStats records are repeated measures, not independent n.
+
+stage_c_protocol_analysis:
+  status: estimation-focused-secondary-family
+  independent_cluster_pairwise: relationship
+  independent_cluster_multiparty: mainland-client-pair
+  comparisons:
+    - direct-webrtc-vs-turn-udp
+    - turn-udp-vs-turn-tls
+    - pairwise-vs-sfu-forwarded-media
+  pairwise_pairing:
+    - relationship_id
+    - outer_ip_family
+    - carrier_id
+    - scenario_id
+    - temporal_block
+  multiparty_strata:
+    - mainland_client_pair
+    - sfu_location
+    - outer_ip_family
+    - carrier_id
+    - scenario_id
+    - temporal_block
+  reporting_by:
+    - carrier_id
+    - protocol_mode
+  endpoints:
+    - session_setup_success
+    - inbound_rtp_loss_pct
+    - video_freeze_ratio
+    - audio_concealed_sample_ratio
+    - current_round_trip_time_ms
+    - handoff_recovery_ms
+  rule: >-
+    Report carrier-specific paired estimates and confidence intervals. The
+    carrier is held constant within each pair or multiparty stratum; UDP and WSS
+    are never pooled or substituted. No protocol mode is assumed universally
+    superior: TURN/TLS may improve reachability while TCP head-of-line blocking
+    may worsen media continuity under loss. The pairwise-vs-SFU comparison is
+    descriptive/estimation-focused because its independent topology differs.
+
+endpoint_definitions:
+  mean_rtt_ms: arithmetic-mean-of-valid-attributed-probe-echo-rtts
+  loss_pct: 100-times-missing-valid-echoes-divided-by-sent-probes
+  inbound_rtp_loss_pct: >-
+    100 times the WebRTC inbound-rtp packetsLost delta divided by packetsReceived
+    plus packetsLost over the registered session interval, reported separately
+    for audio and video before the registered aggregation.
+  video_freeze_ratio: totalFreezesDuration-delta-divided-by-observed-video-duration
+  audio_concealed_sample_ratio: concealedSamples-delta-divided-by-totalSamplesReceived-delta
+  handoff_recovery_ms: >-
+    Monotonic time from registered impairment onset to the first sustained
+    five-second interval meeting the frozen media continuity recovery criteria.
+
+estimation:
+  run_reduction: one-value-per-endpoint-per-complete-session-or-run
+  first_stage: exact-within-cell-paired-difference
+  second_stage: equal-weight-mean-within-independent-cluster
+  interval: paired-cluster-bootstrap-95-percent
+  bootstrap_resamples: 9999
+  bootstrap_seed: 20260806
+  stage_a_test: exact-sign-flip-over-relationship-means
+  stage_b_test: exact-sign-flip-over-client-means
+  p_value_direction: registered-one-sided-for-superiority-and-noninferiority
+  effect_first_reporting: true
+
+quality_control:
+  require_exact_frozen_schedule_population: true
+  require_one-accepted-complete-attempt-per-cell: true
+  retain_incomplete_attempts: true
+  ipv6_fallback_to_ipv4: forbidden
+  tls_carrier_substitution: forbidden
+  outlier_automatic_deletion: forbidden
+  require_native_family_socket_evidence: true
+  require_selected_ice_candidate_pair_evidence: true
+  require_packets-and-getstats-cross-check: true
+  require_checksum-and-schema-validation: true
+  require_single-git-commit-and-container-digests: true
+
+missing_and_retry_policy:
+  network_failure_as_outcome: >-
+    Loss or failed media is an outcome when authentication, native family,
+    namespace state, impairment, clocks, attribution, and cleanup are valid.
+  apparatus_failure: retain-attempt-and-retry-once-after-root-cause-review
+  second_apparatus_failure: stop-affected-stratum-and-open-protocol-deviation
+  unavailable-native-ipv6: blocks-main-start-for-that-required-relationship
+
+pilot_gate:
+  blinded_to_strategy_effects: true
+  allowed_uses:
+    - runtime
+    - missingness
+    - variance
+    - cluster-correlation
+    - safety
+    - margin-feasibility-review-before-main-freeze
+  forbidden_uses:
+    - choosing-favourable-effect-direction
+    - removing-unfavourable-scenarios
+    - retuning-policy-from-outcome-differences

@@ -1,0 +1,264 @@
+schema_version: 2.0.0
+protocol_version: field-2.0-plan
+status: plan-only-no-remote-execution
+dataset_id: field-main-v2
+
+scope:
+  title: >-
+    Adaptive encrypted path and meeting-protocol performance across a dual-stack
+    international client/server mesh
+  primary_question: >-
+    Whether adaptive selection among replicated overseas VPN and conferencing
+    endpoints improves network and WebRTC media continuity relative to static
+    and threshold selection under registered access impairments.
+  evidence_boundary: >-
+    Public-Internet transport and protocol packets are real. The seven access
+    conditions are controlled impairment profiles, not observations collected
+    on an aircraft, railway, or legacy WiFi device.
+
+inventory:
+  source: config/nodes.local.json
+  runtime_only: true
+  commit_addresses: false
+  commit_credentials: false
+  server_nodes:
+    - {node_id: n-syd, region: sydney, roles: [client, server]}
+    - {node_id: n-hkg, region: hong-kong, roles: [client, server]}
+    - {node_id: n-mum, region: mumbai, roles: [client, server]}
+    - {node_id: n-ore, region: oregon, roles: [client, server]}
+    - {node_id: n-lon, region: london, roles: [client, server]}
+    - {node_id: n-irl, region: ireland, roles: [client, server]}
+  mainland_client_nodes:
+    - {node_id: c-cn-ct-suzhou, access: china-telecom, region: suzhou, roles: [client]}
+    - {node_id: c-cn-cu-suzhou, access: china-unicom, region: suzhou, roles: [client]}
+    - {node_id: c-cn-cm-suzhou, access: china-mobile, region: suzhou, roles: [client]}
+    - {node_id: c-cn-ct-shanghai, access: china-telecom, region: shanghai, roles: [client]}
+  role_constraints:
+    - Mainland nodes MUST NOT host VPN, echo, TURN, signalling, or SFU services.
+    - Mainland nodes may initiate sessions and send or receive media after setup.
+    - Only the six overseas nodes may listen as public experiment servers.
+
+relationships:
+  cloud_to_cloud:
+    generation: every unordered pair of the six server nodes
+    relationship_count: 15
+    media_legs_per_session: 2
+  mainland_client_to_cloud_server:
+    generation: every mainland client crossed with every overseas server
+    relationship_count: 24
+    session_origin: mainland-client-only
+    media_legs_per_session: 2
+  excluded:
+    - relation: mainland-to-mainland-server
+      count: 6
+      reason: both endpoints are client-only
+  total_valid_relationships: 39
+  total_directed_media_legs: 78
+
+network_families:
+  levels: [native-outer-ipv4, native-outer-ipv6]
+  native_outer_required: true
+  ipv6_over_ipv4_counts_as_native_ipv6: false
+  address_family_fallback: forbidden
+  current_inventory_state:
+    ipv4: locators-present-but-unverified
+    ipv6: blocked-until-read-only-remote-discovery-and-reachability
+
+encrypted_carriers:
+  registered_levels: [wireguard-udp, wireguard-over-wss]
+  population_rule: crossed-with-every-stage-cell
+  primary:
+    carrier_id: wireguard-udp
+    requirement: literal peer endpoint in the registered outer address family
+  secondary:
+    carrier_id: wireguard-over-wss
+    implementation_candidate: wstunnel
+    tls_minimum: TLSv1.3
+    certificate_verification: required
+    self_signed_or_insecure_skip_verify: forbidden
+    role: separately labelled compatibility and fallback carrier
+    substitution_for_primary_cell: forbidden
+    native_family_rule: >-
+      An IPv6 cell must establish the WSS connection over a literal native IPv6
+      socket. Carrying inner IPv6 through an IPv4 WSS connection is not an IPv6
+      result.
+
+access_scenarios:
+  source: experiments/field-netem-profiles.yaml
+  levels:
+    - normal-control
+    - weak-shared-access
+    - extremely-weak-shared-access
+    - airplane-wifi-shared-access
+    - railway-mobile-path-change
+    - legacy-wifi-link
+    - sudden-outage-handoff
+
+stage_a_full_mesh_characterisation:
+  purpose: >-
+    Measure every valid relationship under every required outer family and
+    access scenario before any policy effect is estimated.
+  factors:
+    relationships: 39
+    outer_families: 2
+    carriers: 2
+    scenarios: 7
+    temporal_blocks: 3
+  session_design:
+    duration_s: 90
+    leg_1_s: 30
+    guard_s: 5
+    leg_2_s: 30
+    remaining_s: 25
+    bidirectional_flows_are_separate_endpoints: true
+  expected_sessions: 3276
+  formula: 39_relationships*2_families*2_carriers*7_scenarios*3_blocks
+  inferential_cluster: relationship
+
+stage_b_adaptive_replica_selection:
+  purpose: >-
+    Compare static, threshold, and adaptive selection while the same meeting
+    service and reference media are replicated on all eligible overseas nodes.
+  client_sources: 10
+  candidate_server_rule: >-
+    Mainland clients have all six overseas candidates. A cloud client has the
+    other five overseas candidates and may never select itself.
+  factors:
+    outer_families: 2
+    carriers: 2
+    scenarios: 7
+    meeting_profiles: [opus-audio, opus-vp8-720p]
+    strategies: [static, threshold, adaptive]
+    temporal_blocks: 5
+  session_duration_s: 90
+  expected_runs: 8400
+  formula: 10_clients*2_families*2_carriers*7_scenarios*2_media*3_strategies*5_blocks
+  inferential_cluster: client-source
+  interpretation: >-
+    This stage evaluates replicated service or VPN gateway selection. Different
+    server regions are not described as alternate physical routes to one host.
+
+stage_c_real_meeting_protocols:
+  reference_media:
+    audio: deterministic speech-like WAV encoded as Opus
+    video: deterministic 720p Y4M encoded as VP8
+    human_subjects: false
+  pairwise:
+    relationships: 39
+    outer_families: 2
+    carriers: 2
+    protocol_modes:
+      - webrtc-direct-ice-dtls-srtp
+      - webrtc-turn-udp
+      - webrtc-turn-tls
+    scenarios:
+      - normal-control
+      - airplane-wifi-shared-access
+      - sudden-outage-handoff
+    temporal_blocks: 2
+    session_duration_s: 120
+    expected_sessions: 2808
+    formula: 39_relationships*2_families*2_carriers*3_protocols*3_scenarios*2_blocks
+  multiparty_sfu:
+    mainland_client_pairs: 6
+    overseas_sfu_locations: 6
+    outer_families: 2
+    carriers: 2
+    scenarios:
+      - normal-control
+      - railway-mobile-path-change
+      - sudden-outage-handoff
+    temporal_blocks: 2
+    session_duration_s: 120
+    expected_conferences: 864
+    formula: 6_client_pairs*6_sfu_locations*2_families*2_carriers*3_scenarios*2_blocks
+  protocol_components:
+    - ICE
+    - STUN
+    - TURN-over-UDP
+    - TURN-over-TLS
+    - DTLS-SRTP
+    - RTP
+    - RTCP
+    - SFU-forwarded-WebRTC
+  implementation_requirements:
+    browser: pinned-Chromium-with-WebRTC-getStats
+    turn: pinned-coturn
+    sfu: one-pinned-open-source-SFU-deployed-identically-on-six-servers
+    signalling: TLS-authenticated-and-version-pinned
+  claim_limit: >-
+    These are real standards-based conferencing sessions with deterministic
+    media. They are not Zoom, Teams, or Meet measurements unless licensed vendor
+    clients and accounts are added under a later protocol amendment.
+
+matrix_totals:
+  stage_a_sessions: 3276
+  stage_b_runs: 8400
+  stage_c_pairwise_sessions: 2808
+  stage_c_multiparty_conferences: 864
+  primary_carrier_units: 7674
+  compatibility_carrier_units: 7674
+  total_scheduled_units: 15348
+  serial_measurement_hours: 414.30
+  projected_wall_clock: 14-to-20-days-after-safe-concurrency
+
+web_rtc_endpoints:
+  primary:
+    - inbound_rtp_loss_pct
+    - video_freeze_ratio
+    - audio_concealed_sample_ratio
+  secondary:
+    - current_round_trip_time_ms
+    - jitter_ms
+    - jitter_buffer_delay_ms
+    - frames_dropped_ratio
+    - bitrate_kbit_s
+    - nack_count
+    - pli_count
+    - fir_count
+    - ice_restart_count
+    - selected_candidate_pair_changes
+    - session_setup_success
+    - handoff_recovery_ms
+  source: W3C-WebRTC-getStats-at-1Hz
+
+safety:
+  approved_qdisc_devices: [avpn-access-*, wg-f-*]
+  forbidden_qdisc_devices: [eth*, ens*, eno*, enp*, wlan*, bond*, br*, lo]
+  root_default_route_changes: forbidden
+  root_firewall_flush_or_replace: forbidden
+  ssh_interface_shaping: forbidden
+  experiment_namespace_required: true
+  narrow_allowed_ips_required: true
+  catch_all_allowed_ips: forbidden
+  max_concurrent_run_per_node: 1
+  watchdog_cleanup_required: true
+  provider_console_or_recovery_path_required: true
+
+randomisation:
+  schedule_seed: 20260806
+  node_disjoint_concurrency: required
+  strategy_order: balanced-williams-sequences
+  paired_impairment_seed_excludes_strategy: true
+  runtime_reordering: recorded-deviation-only
+
+gates:
+  - freeze-and-hash-this-plan-before-remote-preflight
+  - out-of-band-trusted-ssh-host-key-fingerprint-pinning
+  - read-only-authentication-and-native-dual-stack-inventory
+  - rootless-protocol-and-throughput-canary
+  - namespace-only-management-safety-canary
+  - ipv4-and-ipv6-wireguard-and-wss-calibration
+  - blinded-missingness-runtime-and-variance-pilot
+  - immutable-schedule-and-analysis-freeze
+  - main-campaign
+
+execution_model:
+  required_by_operator: gpt-5.6-luna
+  reasoning_effort: max
+  remote_execution_before_model_is_available: forbidden
+
+current_execution_gate:
+  model_available: true
+  gate1_trusted_host_fingerprints: blocked
+  remote_execution_before_gate1_fingerprints: forbidden

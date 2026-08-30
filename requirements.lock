@@ -1,0 +1,14 @@
+# Exact direct Python distributions verified for the 2026-08-03 WSL campaign.
+# System/network packages are installed by scripts/bootstrap_wsl.sh; manifests
+# additionally capture live package, kernel, iproute2 and WireGuard versions.
+jsonschema==4.26.0
+matplotlib==3.11.1
+numpy==2.5.1
+pandas==2.3.3
+psutil==7.0.0
+pydantic==2.10.6
+pytest==8.4.2
+PyYAML==6.0.2
+scipy==1.18.0
+seaborn==0.13.2
+statsmodels==0.14.6

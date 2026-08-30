@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite this repository."
+title: "Adaptive VPN Path Selection Research Code"
+type: software
+authors:
+  - family-names: Cai
+    given-names: Zhanghao
+version: 0.1.0
+date-released: 2026-08-31

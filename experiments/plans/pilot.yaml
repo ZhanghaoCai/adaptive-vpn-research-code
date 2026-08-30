@@ -1,0 +1,12 @@
+include: ../../config/system_config.yaml
+dataset_id: pilot-20260804
+blocks: 2
+scenario_ids:
+  - baseline
+  - compound
+traffic_profile_ids:
+  - video-low
+campaign_stage: pilot
+schedule_path: pilot.95b0eb591d1b6f18dded6b1b38f43825d4d9777700d25faf99a931f96d202697.schedule.json
+schedule_sha256: "95b0eb591d1b6f18dded6b1b38f43825d4d9777700d25faf99a931f96d202697"
+max_attempts_per_cell: 2

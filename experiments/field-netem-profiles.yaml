@@ -1,0 +1,305 @@
+schema_version: 2.0.0
+protocol_version: field-2.0-plan
+status: plan-only-no-qdisc-applied
+
+semantics:
+  delay: additive-one-way-impairment
+  rate: application-path-egress-cap-not-measured-provider-capacity
+  direction: >-
+    source_egress shapes workload requests and destination_egress shapes echo
+    replies. The roles reverse when the directed pair reverses.
+  zero_value_rendering: >-
+    Omit delay, loss, correlation, and rate clauses whose registered value is
+    zero or null. Always render limit and the deterministic seed.
+  approved_device_patterns: [avpn-access-*, wg-f-*]
+  forbidden_device_patterns: [eth*, ens*, eno*, enp*, wlan*, bond*, br*, lo]
+
+profiles:
+  control:
+    source_egress: &control_leg
+      delay_ms: 0
+      jitter_ms: 0
+      loss_pct: 0
+      loss_correlation_pct: 0
+      rate_mbit: null
+      limit_packets: 1000
+    destination_egress: *control_leg
+
+  reference-b:
+    source_egress: &reference_b_leg
+      delay_ms: 5
+      jitter_ms: 1
+      loss_pct: 0.1
+      loss_correlation_pct: 0
+      rate_mbit: 50
+      limit_packets: 500
+    destination_egress: *reference_b_leg
+
+  reference-c:
+    source_egress: &reference_c_leg
+      delay_ms: 12
+      jitter_ms: 2
+      loss_pct: 0.2
+      loss_correlation_pct: 0
+      rate_mbit: 30
+      limit_packets: 300
+    destination_egress: *reference_c_leg
+
+  weak-access:
+    source_egress:
+      delay_ms: 40
+      jitter_ms: 12
+      loss_pct: 1.0
+      loss_correlation_pct: 10
+      rate_mbit: 2
+      limit_packets: 100
+    destination_egress:
+      delay_ms: 25
+      jitter_ms: 8
+      loss_pct: 0.5
+      loss_correlation_pct: 5
+      rate_mbit: 8
+      limit_packets: 100
+
+  extremely-weak-access:
+    source_egress:
+      delay_ms: 160
+      jitter_ms: 70
+      loss_pct: 8
+      loss_correlation_pct: 60
+      rate_mbit: 0.25
+      limit_packets: 20
+    destination_egress:
+      delay_ms: 120
+      jitter_ms: 50
+      loss_pct: 6
+      loss_correlation_pct: 50
+      rate_mbit: 0.5
+      limit_packets: 20
+
+  airplane-wifi-access:
+    source_egress:
+      delay_ms: 280
+      jitter_ms: 80
+      loss_pct: 3
+      loss_correlation_pct: 35
+      rate_mbit: 0.5
+      limit_packets: 40
+    destination_egress:
+      delay_ms: 260
+      jitter_ms: 70
+      loss_pct: 2.5
+      loss_correlation_pct: 30
+      rate_mbit: 1.5
+      limit_packets: 40
+
+  legacy-wifi-access:
+    source_egress:
+      delay_ms: 25
+      jitter_ms: 12
+      loss_pct: 2
+      loss_correlation_pct: 45
+      rate_mbit: 3
+      limit_packets: 80
+    destination_egress:
+      delay_ms: 18
+      jitter_ms: 8
+      loss_pct: 1
+      loss_correlation_pct: 35
+      rate_mbit: 8
+      limit_packets: 80
+
+  railway-good:
+    source_egress:
+      delay_ms: 30
+      jitter_ms: 15
+      loss_pct: 0.8
+      loss_correlation_pct: 20
+      rate_mbit: 8
+      limit_packets: 100
+    destination_egress:
+      delay_ms: 25
+      jitter_ms: 12
+      loss_pct: 0.5
+      loss_correlation_pct: 15
+      rate_mbit: 20
+      limit_packets: 100
+
+  railway-fade:
+    source_egress:
+      delay_ms: 140
+      jitter_ms: 80
+      loss_pct: 7
+      loss_correlation_pct: 65
+      rate_mbit: 1
+      limit_packets: 40
+    destination_egress:
+      delay_ms: 100
+      jitter_ms: 60
+      loss_pct: 5
+      loss_correlation_pct: 60
+      rate_mbit: 4
+      limit_packets: 40
+
+  outage:
+    source_egress: &outage_leg
+      delay_ms: 0
+      jitter_ms: 0
+      loss_pct: 100
+      loss_correlation_pct: 0
+      rate_mbit: null
+      limit_packets: 100
+    destination_egress: *outage_leg
+
+scenarios:
+  normal-control:
+    rationale: Native public path plus stable registered path offsets; negative control.
+    phases:
+      - phase_id: steady
+        duration_s: 60
+        shared_access: control
+        paths: {path-a: control, path-b: reference-b, path-c: reference-c}
+
+  weak-shared-access:
+    rationale: Moderate asymmetric shared-last-mile stress that switching cannot escape.
+    phases:
+      - phase_id: pre-change
+        duration_s: 15
+        shared_access: control
+        paths: {path-a: control, path-b: reference-b, path-c: reference-c}
+      - phase_id: weak-access
+        duration_s: 35
+        shared_access: weak-access
+        paths: {path-a: control, path-b: reference-b, path-c: reference-c}
+      - phase_id: recovery
+        duration_s: 10
+        shared_access: control
+        paths: {path-a: control, path-b: reference-b, path-c: reference-c}
+
+  extremely-weak-shared-access:
+    rationale: Shared severe stress below the high workload offered load.
+    phases:
+      - phase_id: pre-change
+        duration_s: 15
+        shared_access: control
+        paths: {path-a: control, path-b: reference-b, path-c: reference-c}
+      - phase_id: extremely-weak-access
+        duration_s: 35
+        shared_access: extremely-weak-access
+        paths: {path-a: control, path-b: reference-b, path-c: reference-c}
+      - phase_id: recovery
+        duration_s: 10
+        shared_access: control
+        paths: {path-a: control, path-b: reference-b, path-c: reference-c}
+
+  airplane-wifi-shared-access:
+    rationale: Stylised high-delay, low-rate shared access; not an aircraft measurement.
+    phases:
+      - phase_id: pre-change
+        duration_s: 15
+        shared_access: control
+        paths: {path-a: control, path-b: reference-b, path-c: reference-c}
+      - phase_id: high-delay-access
+        duration_s: 35
+        shared_access: airplane-wifi-access
+        paths: {path-a: control, path-b: reference-b, path-c: reference-c}
+      - phase_id: recovery
+        duration_s: 10
+        shared_access: control
+        paths: {path-a: control, path-b: reference-b, path-c: reference-c}
+
+  railway-mobile-path-change:
+    rationale: Repeatable primary-path fades and logical handoff to a prepared alternate.
+    phases:
+      - phase_id: stable-cell
+        duration_s: 15
+        shared_access: control
+        paths: {path-a: control, path-b: reference-b, path-c: reference-c}
+      - phase_id: cell-edge-fade
+        duration_s: 15
+        shared_access: control
+        paths: {path-a: railway-fade, path-b: reference-b, path-c: reference-c}
+      - phase_id: handover-blackout
+        duration_s: 5
+        shared_access: control
+        paths: {path-a: outage, path-b: railway-good, path-c: reference-c}
+      - phase_id: new-cell
+        duration_s: 15
+        shared_access: control
+        paths: {path-a: railway-fade, path-b: railway-good, path-c: reference-c}
+      - phase_id: stabilised
+        duration_s: 10
+        shared_access: control
+        paths: {path-a: reference-b, path-b: control, path-c: reference-c}
+
+  legacy-wifi-link:
+    rationale: >-
+      Shared 2.4-GHz-like rate, queue, jitter, and burst-loss stress. It does not
+      emulate old CPU, firmware, driver, radio coexistence, or device age itself.
+    phases:
+      - phase_id: pre-change
+        duration_s: 15
+        shared_access: control
+        paths: {path-a: control, path-b: reference-b, path-c: reference-c}
+      - phase_id: constrained-link
+        duration_s: 35
+        shared_access: legacy-wifi-access
+        paths: {path-a: control, path-b: reference-b, path-c: reference-c}
+      - phase_id: recovery
+        duration_s: 10
+        shared_access: control
+        paths: {path-a: control, path-b: reference-b, path-c: reference-c}
+
+  sudden-outage-handoff:
+    rationale: Deterministic active logical-path outage with reachable warm standbys.
+    phases:
+      - phase_id: pre-outage
+        duration_s: 15
+        shared_access: control
+        paths: {path-a: control, path-b: reference-b, path-c: reference-c}
+      - phase_id: path-a-outage
+        duration_s: 20
+        shared_access: control
+        paths: {path-a: outage, path-b: reference-b, path-c: reference-c}
+      - phase_id: path-a-recovery
+        duration_s: 25
+        shared_access: control
+        paths: {path-a: control, path-b: reference-b, path-c: reference-c}
+
+operational_template:
+  argv_order:
+    - ip
+    - netns
+    - exec
+    - NETNS
+    - tc
+    - qdisc
+    - replace
+    - dev
+    - DEVICE
+    - root
+    - handle
+    - '10:'
+    - netem
+    - limit
+    - LIMIT_PACKETS
+    - OPTIONAL_DELAY
+    - OPTIONAL_LOSS_RANDOM
+    - OPTIONAL_RATE
+    - seed
+    - DETERMINISTIC_SEED
+  example_rendering: >-
+    tc qdisc replace dev wg-f-a root handle 10: netem limit 100 delay
+    40ms 12ms distribution normal loss random 1% 10% rate 2mbit seed 12345
+  apply_rule: >-
+    Execute only through an argument array inside the validated experiment
+    namespace. Reject shell interpolation and reject every device that does not
+    match the approved prefixes.
+
+calibration_tolerances:
+  phase_boundary_skew_ms_max: 50
+  added_delay_tolerance: max(10ms,20-percent-of-request)
+  nonzero_loss_tolerance: max(0.5-percentage-points,25-percent-of-request)
+  rate_tolerance_pct: 20
+  unaffected_path_added_rtt_ms_max: 5
+  unaffected_path_added_loss_percentage_points_max: 0.2

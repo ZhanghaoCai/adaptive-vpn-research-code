@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/adaptive-vpn/event-v1.0.schema.json",
+  "title": "Adaptive VPN run event v1.0 (legacy read compatibility)",
+  "x-evidence-schema-version": "1.0.0",
+  "type": "object",
+  "required": ["event"],
+  "properties": {
+    "event": {"type": "string", "minLength": 1}
+  },
+  "x-resource-limits": {
+    "maximum_raw_utf8_jsonl_line_bytes_including_newline": 1048576,
+    "maximum_canonical_ascii_jsonl_line_bytes_including_newline": 1048576,
+    "canonical_ascii_serialization": {
+      "sort_keys": true,
+      "ensure_ascii": true,
+      "allow_nan": false,
+      "terminal_lf": true
+    },
+    "maximum_json_depth": 32,
+    "maximum_json_nodes": 10000
+  },
+  "x-secret-boundary": {
+    "normalization": ["trim", "lowercase", "hyphen_to_underscore"],
+    "forbidden_normalized_keys": [
+      "access_token",
+      "api_secret",
+      "auth_token",
+      "client_secret",
+      "credential",
+      "credentials",
+      "password",
+      "private_key"
+    ],
+    "forbidden_normalized_suffixes": ["_credential"],
+    "scope": "all_nested_object_keys"
+  },
+  "x-bundle-policy": "evidence-bundle-policy.schema.json",
+  "additionalProperties": true
+}

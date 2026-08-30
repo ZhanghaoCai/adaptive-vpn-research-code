@@ -1,0 +1,7 @@
+schema_version,run_id,dataset_id,strategy,scenario,traffic_profile,block,status,sent_count,received_count,rtt_mean_ms,rtt_p95_ms,rtt_median_ms,mean_jitter_ms,loss_pct,switch_count,longest_disruption_ms,apparatus_failure,source_bundle
+1.0.0,00000000-0000-4000-8000-000000000101,fixture-only,static,latency_step,video_low,1,complete,100,90,82.0,100.0,80.0,4.0,10.0,0,0.0,false,fixture/static-1
+1.0.0,00000000-0000-4000-8000-000000000102,fixture-only,threshold,latency_step,video_low,1,complete,100,92,72.0,90.0,72.0,3.5,8.0,1,9.0,false,fixture/threshold-1
+1.0.0,00000000-0000-4000-8000-000000000103,fixture-only,adaptive,latency_step,video_low,1,complete,100,96,58.0,70.0,60.0,2.0,4.0,1,8.0,false,fixture/adaptive-1
+1.0.0,00000000-0000-4000-8000-000000000104,fixture-only,static,latency_step,video_low,2,complete,100,88,95.0,120.0,90.0,5.0,12.0,0,0.0,false,fixture/static-2
+1.0.0,00000000-0000-4000-8000-000000000105,fixture-only,threshold,latency_step,video_low,2,complete,100,91,80.0,100.0,78.0,4.0,9.0,1,10.0,false,fixture/threshold-2
+1.0.0,00000000-0000-4000-8000-000000000106,fixture-only,adaptive,latency_step,video_low,2,complete,100,95,64.0,80.0,65.0,2.5,5.0,1,9.0,false,fixture/adaptive-2

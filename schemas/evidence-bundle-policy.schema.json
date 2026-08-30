@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/adaptive-vpn/evidence-bundle-policy.schema.json",
+  "title": "Adaptive VPN evidence bundle policy",
+  "description": "Cross-artifact rules enforced by the mandatory runtime validator in addition to structural artifact schemas.",
+  "x-runtime-validator": {
+    "required": true,
+    "python_entrypoint": "adaptive_vpn.collector.validate_evidence_bundle",
+    "invocation_scope": "whole-evidence-bundle",
+    "acceptance_condition": "result.valid == true",
+    "json_schema_scope": "artifact-structure-only",
+    "json_schema_alone_is_sufficient": false,
+    "maximum_diagnostic_messages": 100,
+    "maximum_diagnostic_characters": 1024,
+    "maximum_bundle_entries": 1024,
+    "maximum_dataset_bundles": 20000,
+    "maximum_manifest_or_json_bytes": 1048576,
+    "maximum_artifact_bytes": 67108864,
+    "maximum_bundle_bytes": 268435456
+  },
+  "x-bundle-invariants": {
+    "bundle_path": {
+      "must_be_directory": true,
+      "symlink_allowed": false,
+      "windows_reparse_point_allowed": false
+    },
+    "top_level_inventory": {
+      "scope": "top-level",
+      "all_entries_except_sha256sums_must_be_regular_files": true,
+      "symlinks_and_non_regular_entries_forbidden": true,
+      "windows_reparse_points_forbidden": true,
+      "required_artifacts": [
+        "packets.csv",
+        "events.jsonl",
+        "manifest.json",
+        "SHA256SUMS"
+      ]
+    },
+    "sha256sums": {
+      "encoding": "ascii",
+      "maximum_bytes": 1048576,
+      "must_be_nonempty": true,
+      "line_format": "<lowercase-sha256><two-spaces><safe-basename>",
+      "safe_basename": {
+        "nonempty": true,
+        "forbidden_exact_names": [".", ".."],
+        "forbidden_characters": ["/", "\\", "\u0000"]
+      },
+      "duplicate_entries_forbidden": true,
+      "self_entry_forbidden": true,
+      "coverage": "exactly-all-other-top-level-regular-files",
+      "digests_must_match": true
+    },
+    "manifest_evidence_sha256": {
+      "coverage": "exactly-all-top-level-regular-files-except-manifest-and-sha256sums",
+      "excluded_artifacts": ["manifest.json", "SHA256SUMS"],
+      "safe_basename_required": true,
+      "lowercase_sha256_required": true,
+      "digests_must_match": true
+    },
+    "directory_identity": {
+      "directory_name_must_equal_canonical_manifest_identity": true,
+      "manifest_identity_field_by_version": {
+        "1.0.0": "run_id",
+        "1.1.0": "run_id",
+        "1.2.0": "attempt_id"
+      }
+    },
+    "packets_csv": {
+      "exact_header": [
+        "sequence",
+        "path_id",
+        "sent_ns",
+        "received_ns",
+        "status",
+        "rtt_ms",
+        "datagram_bytes"
+      ],
+      "current_schema_sequence_values_must_be_unique": true
+    },
+    "current_complete_run": {
+      "when": {
+        "schema_version_in": ["1.1.0", "1.2.0"],
+        "status": "complete"
+      },
+      "packets_csv_minimum_semantically_valid_data_rows": 1,
+      "events_jsonl_minimum_semantically_valid_events": 1
+    }
+  },
+  "x-manifest-artifact-contracts": {
+    "1.0.0": {
+      "packet_schema_version": "1.0.0",
+      "event_schema_version": "1.0.0"
+    },
+    "1.1.0": {
+      "packet_schema_version": "1.1.0",
+      "event_schema_version": "1.1.0"
+    },
+    "1.2.0": {
+      "packet_schema_version": "1.1.0",
+      "event_schema_version": "1.1.0"
+    }
+  },
+  "x-structured-artifact-policy": {
+    "extensions": [".json", ".jsonl"],
+    "extension_matching": "case-insensitive",
+    "parse_mode": {
+      ".json": "single-json-value",
+      ".jsonl": "json-value-per-line"
+    },
+    "secret_boundary_scope": "all_nested_object_keys"
+  },
+  "x-secret-boundary": {
+    "normalization": ["trim", "lowercase", "hyphen_to_underscore"],
+    "forbidden_normalized_keys": [
+      "access_token",
+      "api_secret",
+      "auth_token",
+      "client_secret",
+      "credential",
+      "credentials",
+      "password",
+      "private_key"
+    ],
+    "forbidden_normalized_suffixes": ["_credential"],
+    "scope": "all_nested_object_keys"
+  },
+  "x-core-text-contract": {
+    "manifest_schema_versions": ["1.1.0", "1.2.0"],
+    "packet_event_schema_version": "1.1.0",
+    "artifacts": ["packets.csv", "events.jsonl", "manifest.json", "SHA256SUMS"],
+    "line_separator": "LF",
+    "terminal_lf_required_when_nonempty": true
+  }
+}

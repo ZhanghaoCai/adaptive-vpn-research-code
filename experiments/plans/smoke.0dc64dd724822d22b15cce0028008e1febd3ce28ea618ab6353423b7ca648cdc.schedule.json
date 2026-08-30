@@ -1,0 +1,36 @@
+{
+  "campaign_stage": "smoke",
+  "cells": [
+    {
+      "block": 1,
+      "cell_id": "efb06592-00d2-5b6d-88eb-0d4d53e5a474",
+      "ordinal": 1,
+      "scenario_id": "latency-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 1,
+      "cell_id": "ab6a2d6b-d21a-5a90-8481-054625b64f77",
+      "ordinal": 2,
+      "scenario_id": "latency-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 1,
+      "cell_id": "e3ab810c-ea4c-5d7b-b6a3-9cfe0dbed95c",
+      "ordinal": 3,
+      "scenario_id": "latency-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    }
+  ],
+  "config_sha256": "94281f0a3e01f8e96b324badda89d4fe203a9e61c2e5fe466d8ab9c65fada86a",
+  "dataset_id": "smoke-20260804",
+  "design": "randomised-complete-block",
+  "expected_cells": 3,
+  "schedule_seed": 20260803,
+  "schema_version": "2.0.0",
+  "source": "config/system_config.yaml"
+}

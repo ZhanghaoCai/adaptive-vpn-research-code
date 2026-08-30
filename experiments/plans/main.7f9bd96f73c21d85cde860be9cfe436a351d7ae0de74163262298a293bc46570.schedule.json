@@ -1,0 +1,3468 @@
+{
+  "campaign_stage": "main",
+  "cells": [
+    {
+      "block": 1,
+      "cell_id": "4c3d05e7-8153-5de6-90fe-9cd01ab57665",
+      "ordinal": 1,
+      "scenario_id": "baseline",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 1,
+      "cell_id": "b1391512-3383-594d-8450-f2331c8e5d2c",
+      "ordinal": 2,
+      "scenario_id": "baseline",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 1,
+      "cell_id": "5d8d908e-c9d8-59e0-8356-cdf3e05eaa7d",
+      "ordinal": 3,
+      "scenario_id": "baseline",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 1,
+      "cell_id": "481f212b-2992-54bd-b5d3-9999650e9bb4",
+      "ordinal": 4,
+      "scenario_id": "baseline",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 1,
+      "cell_id": "44de1999-b0ae-532b-a64a-79290cd8a1e6",
+      "ordinal": 5,
+      "scenario_id": "baseline",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 1,
+      "cell_id": "050f101d-2ec9-52f4-82a4-f559d03e8d4b",
+      "ordinal": 6,
+      "scenario_id": "baseline",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 1,
+      "cell_id": "3d70e844-7ae9-5d8f-9789-928e664e100e",
+      "ordinal": 7,
+      "scenario_id": "latency-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 1,
+      "cell_id": "fc5a5bfd-7841-5108-b91b-132d1d659ef0",
+      "ordinal": 8,
+      "scenario_id": "latency-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 1,
+      "cell_id": "269cfafa-fd8f-54db-bee7-29965ca5fab2",
+      "ordinal": 9,
+      "scenario_id": "latency-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 1,
+      "cell_id": "d7b09ed9-c7cd-5671-a7ec-2bb690d87b33",
+      "ordinal": 10,
+      "scenario_id": "latency-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 1,
+      "cell_id": "41fc5fe4-bed7-5cc8-94a8-fe7b4ff680c2",
+      "ordinal": 11,
+      "scenario_id": "latency-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 1,
+      "cell_id": "7ce04f2a-80d3-5f88-865d-6d9fe5b48e8e",
+      "ordinal": 12,
+      "scenario_id": "latency-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 1,
+      "cell_id": "111236e3-e15d-5acf-b48f-460418fd03f4",
+      "ordinal": 13,
+      "scenario_id": "jitter-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 1,
+      "cell_id": "46b2f64e-1a97-5bbe-ad57-0110137706cc",
+      "ordinal": 14,
+      "scenario_id": "jitter-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 1,
+      "cell_id": "b854d97d-a2ea-5092-823d-8c45f0dd4b1c",
+      "ordinal": 15,
+      "scenario_id": "jitter-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 1,
+      "cell_id": "caa2f796-e288-593e-8272-acde214be93d",
+      "ordinal": 16,
+      "scenario_id": "jitter-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 1,
+      "cell_id": "c4d5e731-c0fb-551d-922b-58da89367c47",
+      "ordinal": 17,
+      "scenario_id": "jitter-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 1,
+      "cell_id": "6e795d7a-e9a7-5cae-9d4e-58df84dd53a3",
+      "ordinal": 18,
+      "scenario_id": "jitter-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 1,
+      "cell_id": "556f5c48-4378-54ab-ae1a-f2b84a07df27",
+      "ordinal": 19,
+      "scenario_id": "random-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 1,
+      "cell_id": "da24e170-9694-5d0d-8892-029d83e28033",
+      "ordinal": 20,
+      "scenario_id": "random-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 1,
+      "cell_id": "3f673214-9f26-5d0b-b701-cc79de3d0ec2",
+      "ordinal": 21,
+      "scenario_id": "random-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 1,
+      "cell_id": "7f2d7fe8-7862-519a-8ff4-cdfa12cf1c6f",
+      "ordinal": 22,
+      "scenario_id": "random-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 1,
+      "cell_id": "25f95787-2c95-58d8-ab3a-fa2e032b92fb",
+      "ordinal": 23,
+      "scenario_id": "random-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 1,
+      "cell_id": "721eddcf-8781-5b55-8567-4b569cf6ad74",
+      "ordinal": 24,
+      "scenario_id": "random-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 1,
+      "cell_id": "a6b5cc4b-9f57-56ab-b637-fc5d8abf215e",
+      "ordinal": 25,
+      "scenario_id": "burst-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 1,
+      "cell_id": "f60a0579-b1ce-512f-bdf2-6062d8417a5c",
+      "ordinal": 26,
+      "scenario_id": "burst-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 1,
+      "cell_id": "152e3ddc-7183-558d-a083-f93939fa4703",
+      "ordinal": 27,
+      "scenario_id": "burst-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 1,
+      "cell_id": "cf02d1dc-9351-53fc-9ec6-d3cfd9832e37",
+      "ordinal": 28,
+      "scenario_id": "burst-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 1,
+      "cell_id": "552c84fa-571b-5280-bcf4-b5e32928c7bb",
+      "ordinal": 29,
+      "scenario_id": "burst-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 1,
+      "cell_id": "2e7cc086-156a-5388-ac23-5e757c41b273",
+      "ordinal": 30,
+      "scenario_id": "burst-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 1,
+      "cell_id": "eb190e3d-2abf-5c81-984a-be72c952ede9",
+      "ordinal": 31,
+      "scenario_id": "compound",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 1,
+      "cell_id": "8dec0fb8-d478-53b4-9078-26ace7dea318",
+      "ordinal": 32,
+      "scenario_id": "compound",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 1,
+      "cell_id": "f4547e11-f555-5b12-99b4-e490b51506d9",
+      "ordinal": 33,
+      "scenario_id": "compound",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 1,
+      "cell_id": "ae93e241-b6e0-5725-b2b0-1fb0d421a91d",
+      "ordinal": 34,
+      "scenario_id": "compound",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 1,
+      "cell_id": "a18d53a4-6bd6-5824-b17d-1d4bc0a34464",
+      "ordinal": 35,
+      "scenario_id": "compound",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 1,
+      "cell_id": "8a0b804a-293a-5cc8-8719-e37830d709a0",
+      "ordinal": 36,
+      "scenario_id": "compound",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 2,
+      "cell_id": "bf17f823-99b1-5181-8f84-4eb2cf094871",
+      "ordinal": 37,
+      "scenario_id": "baseline",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 2,
+      "cell_id": "aceb2fe6-fc56-5493-9790-a7fcbf88d73b",
+      "ordinal": 38,
+      "scenario_id": "baseline",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 2,
+      "cell_id": "c3735971-9c3a-5971-8fa2-2588c60f0f96",
+      "ordinal": 39,
+      "scenario_id": "baseline",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 2,
+      "cell_id": "1dd1ad7c-6009-57db-98c8-82db128485d7",
+      "ordinal": 40,
+      "scenario_id": "baseline",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 2,
+      "cell_id": "bf55ac80-e521-584f-8236-a65a5581b1a1",
+      "ordinal": 41,
+      "scenario_id": "baseline",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 2,
+      "cell_id": "f336890e-3810-5652-8580-d8f01ed91fe2",
+      "ordinal": 42,
+      "scenario_id": "baseline",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 2,
+      "cell_id": "7f49ee28-91df-5773-a9f9-2e178a417f5c",
+      "ordinal": 43,
+      "scenario_id": "latency-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 2,
+      "cell_id": "7e03a9f2-1a7e-57bb-aaaf-e3ee3a3d29d0",
+      "ordinal": 44,
+      "scenario_id": "latency-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 2,
+      "cell_id": "3acbe627-e31d-5801-8e4a-cf39e53c86c9",
+      "ordinal": 45,
+      "scenario_id": "latency-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 2,
+      "cell_id": "73415eba-db04-5103-89e7-cffa4fc08bbb",
+      "ordinal": 46,
+      "scenario_id": "latency-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 2,
+      "cell_id": "40889446-8c42-5fbd-8940-8bfd11bf3731",
+      "ordinal": 47,
+      "scenario_id": "latency-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 2,
+      "cell_id": "97a087fc-9ca1-5950-85fa-0cf8223065b3",
+      "ordinal": 48,
+      "scenario_id": "latency-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 2,
+      "cell_id": "5ceface1-da28-5f5c-adf9-eeb429d10f3b",
+      "ordinal": 49,
+      "scenario_id": "jitter-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 2,
+      "cell_id": "02af9b18-ab57-5069-8fa5-26aea11585bf",
+      "ordinal": 50,
+      "scenario_id": "jitter-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 2,
+      "cell_id": "72ed9750-6ef2-59aa-a409-cdd02f681a96",
+      "ordinal": 51,
+      "scenario_id": "jitter-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 2,
+      "cell_id": "47232e3f-9b3c-56be-9707-fadd89dbd694",
+      "ordinal": 52,
+      "scenario_id": "jitter-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 2,
+      "cell_id": "81a5012d-6d57-54c7-981b-14802c296255",
+      "ordinal": 53,
+      "scenario_id": "jitter-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 2,
+      "cell_id": "bb43c503-c4a5-5d12-afcd-7e0683c989a8",
+      "ordinal": 54,
+      "scenario_id": "jitter-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 2,
+      "cell_id": "89690ef0-b087-5e5b-8cd7-bf8c69aef47a",
+      "ordinal": 55,
+      "scenario_id": "random-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 2,
+      "cell_id": "2caa7f94-ecfe-5430-96d5-1ae148f2e063",
+      "ordinal": 56,
+      "scenario_id": "random-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 2,
+      "cell_id": "c8e3dbd9-c68f-564c-9da4-517652a8a9f9",
+      "ordinal": 57,
+      "scenario_id": "random-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 2,
+      "cell_id": "6bcb497c-2257-5374-b8b9-c0ac3c60a5ff",
+      "ordinal": 58,
+      "scenario_id": "random-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 2,
+      "cell_id": "d4503150-d176-50e2-8ccc-6a426daf3072",
+      "ordinal": 59,
+      "scenario_id": "random-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 2,
+      "cell_id": "dc8d55f9-d3fd-5d45-a2be-10b612b39c96",
+      "ordinal": 60,
+      "scenario_id": "random-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 2,
+      "cell_id": "5ce9ad47-8534-50f4-aa9e-f16947074449",
+      "ordinal": 61,
+      "scenario_id": "burst-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 2,
+      "cell_id": "186a652c-73d4-5c81-8c18-6d3346e1b3c3",
+      "ordinal": 62,
+      "scenario_id": "burst-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 2,
+      "cell_id": "28fefa44-1ebe-57d7-b1dc-37c5b1eeb120",
+      "ordinal": 63,
+      "scenario_id": "burst-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 2,
+      "cell_id": "25fad75b-98a4-5209-883e-29b6766ca4f2",
+      "ordinal": 64,
+      "scenario_id": "burst-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 2,
+      "cell_id": "f04dcaf2-028f-5c36-93d5-22e3686b07e1",
+      "ordinal": 65,
+      "scenario_id": "burst-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 2,
+      "cell_id": "9c0b5d49-054b-5aa9-ab30-879889bc7039",
+      "ordinal": 66,
+      "scenario_id": "burst-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 2,
+      "cell_id": "c2bb9813-9d7c-51bf-bf96-6cad771b0ffa",
+      "ordinal": 67,
+      "scenario_id": "compound",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 2,
+      "cell_id": "5cf1bb0c-9127-557c-8086-8d5c9927e0b5",
+      "ordinal": 68,
+      "scenario_id": "compound",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 2,
+      "cell_id": "ee19a4a9-62e5-515b-a94f-afe077f95b11",
+      "ordinal": 69,
+      "scenario_id": "compound",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 2,
+      "cell_id": "fef88d45-e0f5-5be9-b534-7e8dbedc1921",
+      "ordinal": 70,
+      "scenario_id": "compound",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 2,
+      "cell_id": "5957f5ed-a6f6-5644-861f-014c3fdce9ae",
+      "ordinal": 71,
+      "scenario_id": "compound",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 2,
+      "cell_id": "a3f4f500-6fa3-56db-bfe1-7250a24e9426",
+      "ordinal": 72,
+      "scenario_id": "compound",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 3,
+      "cell_id": "f4db2050-c05a-5280-bcc0-428b1aa6798c",
+      "ordinal": 73,
+      "scenario_id": "baseline",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 3,
+      "cell_id": "b979f114-073f-5803-964d-5399719c7df9",
+      "ordinal": 74,
+      "scenario_id": "baseline",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 3,
+      "cell_id": "e21a99bc-3c7a-5dea-ae8f-828c8ae60b6a",
+      "ordinal": 75,
+      "scenario_id": "baseline",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 3,
+      "cell_id": "b4615a6a-4133-58ce-a5c4-d34c5c7bb41e",
+      "ordinal": 76,
+      "scenario_id": "baseline",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 3,
+      "cell_id": "0465758c-f749-5f53-87b4-fc8c321f3c1c",
+      "ordinal": 77,
+      "scenario_id": "baseline",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 3,
+      "cell_id": "fb83b4e6-b3e0-5b34-b43b-c3eadabab98a",
+      "ordinal": 78,
+      "scenario_id": "baseline",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 3,
+      "cell_id": "7faba5ed-851f-5811-bcef-8c5f8f60816e",
+      "ordinal": 79,
+      "scenario_id": "latency-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 3,
+      "cell_id": "11a5a7f5-fe30-539b-b564-4e56ec7fe33f",
+      "ordinal": 80,
+      "scenario_id": "latency-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 3,
+      "cell_id": "42d23ab9-b2d1-59ee-b0b2-baba4c722e3f",
+      "ordinal": 81,
+      "scenario_id": "latency-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 3,
+      "cell_id": "dff09e3b-5969-55d8-b4e8-890827729714",
+      "ordinal": 82,
+      "scenario_id": "latency-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 3,
+      "cell_id": "9bf869ad-fa5a-5693-bd76-40c32c593b0a",
+      "ordinal": 83,
+      "scenario_id": "latency-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 3,
+      "cell_id": "9f4962c9-cce5-5b0b-911d-789218eb8548",
+      "ordinal": 84,
+      "scenario_id": "latency-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 3,
+      "cell_id": "5b835a51-0769-5241-8f47-04eec09b0491",
+      "ordinal": 85,
+      "scenario_id": "jitter-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 3,
+      "cell_id": "778a2dc1-2855-5eb1-96c3-9121c4db3845",
+      "ordinal": 86,
+      "scenario_id": "jitter-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 3,
+      "cell_id": "0df73b0a-33ef-5157-95b0-702e85c26a8a",
+      "ordinal": 87,
+      "scenario_id": "jitter-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 3,
+      "cell_id": "1ff50ebd-34dc-5f00-b38d-5186a27d1ee9",
+      "ordinal": 88,
+      "scenario_id": "jitter-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 3,
+      "cell_id": "8a9d5100-ce4c-5b75-a7d6-ef5040688a04",
+      "ordinal": 89,
+      "scenario_id": "jitter-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 3,
+      "cell_id": "f26a4782-3b7f-592c-a56b-231dd7683dce",
+      "ordinal": 90,
+      "scenario_id": "jitter-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 3,
+      "cell_id": "d4aec81f-2441-5f27-b219-68585259028d",
+      "ordinal": 91,
+      "scenario_id": "random-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 3,
+      "cell_id": "134ab94f-dd45-5fe4-9b34-4d0d1ebdefd9",
+      "ordinal": 92,
+      "scenario_id": "random-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 3,
+      "cell_id": "4c01198d-3d89-5d99-ac15-9794a5b4e2f2",
+      "ordinal": 93,
+      "scenario_id": "random-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 3,
+      "cell_id": "2b06b410-db85-5c56-abef-c4eba9472c47",
+      "ordinal": 94,
+      "scenario_id": "random-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 3,
+      "cell_id": "a7b7c506-271e-55ab-82ca-92ed9a7df606",
+      "ordinal": 95,
+      "scenario_id": "random-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 3,
+      "cell_id": "71f7a72b-4390-56d1-ae31-df7660722e85",
+      "ordinal": 96,
+      "scenario_id": "random-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 3,
+      "cell_id": "d11aff24-060d-58bb-a269-a52339f67f46",
+      "ordinal": 97,
+      "scenario_id": "burst-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 3,
+      "cell_id": "b8d65197-86f1-5b68-a3fe-e945019a94a9",
+      "ordinal": 98,
+      "scenario_id": "burst-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 3,
+      "cell_id": "edb9f74f-bee6-595e-9eab-b4eae3a6c31a",
+      "ordinal": 99,
+      "scenario_id": "burst-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 3,
+      "cell_id": "60817e25-b1df-5096-9e6b-6721ba8cf017",
+      "ordinal": 100,
+      "scenario_id": "burst-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 3,
+      "cell_id": "b28f317a-02ce-5c91-9663-7b085e329e54",
+      "ordinal": 101,
+      "scenario_id": "burst-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 3,
+      "cell_id": "03829e06-eee6-5a95-a7bb-87545e73adba",
+      "ordinal": 102,
+      "scenario_id": "burst-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 3,
+      "cell_id": "80d0dfd0-d24a-5bd1-94c0-1232614d6dc8",
+      "ordinal": 103,
+      "scenario_id": "compound",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 3,
+      "cell_id": "047eb689-6073-5dcf-8a9c-4311e4031f6e",
+      "ordinal": 104,
+      "scenario_id": "compound",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 3,
+      "cell_id": "9bb2a06a-24c7-539f-9831-fa9198de4450",
+      "ordinal": 105,
+      "scenario_id": "compound",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 3,
+      "cell_id": "9e55479d-a4ee-5db7-8713-1908206fd53a",
+      "ordinal": 106,
+      "scenario_id": "compound",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 3,
+      "cell_id": "5b61a540-8df5-5ad2-81aa-e55043c00453",
+      "ordinal": 107,
+      "scenario_id": "compound",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 3,
+      "cell_id": "6dcd9d88-35e7-5c31-a7fd-5fac3c2a9baf",
+      "ordinal": 108,
+      "scenario_id": "compound",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 4,
+      "cell_id": "6fcb1838-56ae-5c3a-a5be-d74e557f552c",
+      "ordinal": 109,
+      "scenario_id": "baseline",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 4,
+      "cell_id": "f600e0de-7624-5118-9da4-56c73fdb68df",
+      "ordinal": 110,
+      "scenario_id": "baseline",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 4,
+      "cell_id": "6e172b9d-e69b-547d-8c61-6b5a0e82437a",
+      "ordinal": 111,
+      "scenario_id": "baseline",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 4,
+      "cell_id": "2417d49f-dfb0-529a-8418-0688faf46131",
+      "ordinal": 112,
+      "scenario_id": "baseline",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 4,
+      "cell_id": "54052ae6-7eb9-5b26-bf4f-31bcbe7c816d",
+      "ordinal": 113,
+      "scenario_id": "baseline",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 4,
+      "cell_id": "7f99df2b-da62-5f11-9e78-5ab13df4baab",
+      "ordinal": 114,
+      "scenario_id": "baseline",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 4,
+      "cell_id": "cb1059ff-984e-5f23-b4bf-f0266d8cf7d7",
+      "ordinal": 115,
+      "scenario_id": "latency-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 4,
+      "cell_id": "93f78242-35af-5684-bfc9-115f78c86a03",
+      "ordinal": 116,
+      "scenario_id": "latency-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 4,
+      "cell_id": "3904233b-125e-5ee3-afd4-d74a99821752",
+      "ordinal": 117,
+      "scenario_id": "latency-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 4,
+      "cell_id": "c4954ac8-380f-512c-8c2b-d6812e07d241",
+      "ordinal": 118,
+      "scenario_id": "latency-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 4,
+      "cell_id": "57ab9adc-a31e-510f-8c9e-d44877634fba",
+      "ordinal": 119,
+      "scenario_id": "latency-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 4,
+      "cell_id": "18090744-719b-591b-a854-8626373ca4e0",
+      "ordinal": 120,
+      "scenario_id": "latency-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 4,
+      "cell_id": "79a503bc-75f9-56ba-bd54-43e0a01d62a3",
+      "ordinal": 121,
+      "scenario_id": "jitter-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 4,
+      "cell_id": "475e691d-94b1-5f99-8ff7-6579a381ce9b",
+      "ordinal": 122,
+      "scenario_id": "jitter-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 4,
+      "cell_id": "c7ec7feb-52b4-5166-bfa0-1abc0019188d",
+      "ordinal": 123,
+      "scenario_id": "jitter-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 4,
+      "cell_id": "54d11d41-c770-5c39-920b-606e02dc1f0f",
+      "ordinal": 124,
+      "scenario_id": "jitter-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 4,
+      "cell_id": "beea4a71-fdd2-5e82-a93c-4526fc9ef327",
+      "ordinal": 125,
+      "scenario_id": "jitter-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 4,
+      "cell_id": "0eb8d2bb-e3a1-5412-9289-e2bdef9f8d6e",
+      "ordinal": 126,
+      "scenario_id": "jitter-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 4,
+      "cell_id": "b7378523-bb48-5cfd-85da-68dacf2a7cdc",
+      "ordinal": 127,
+      "scenario_id": "random-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 4,
+      "cell_id": "6fa2465b-b75b-5f86-8181-7db3b0a368ca",
+      "ordinal": 128,
+      "scenario_id": "random-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 4,
+      "cell_id": "be5cde26-a916-52c7-813e-06d069f341f6",
+      "ordinal": 129,
+      "scenario_id": "random-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 4,
+      "cell_id": "b49a4504-51c7-5ff9-a44a-a553042beb00",
+      "ordinal": 130,
+      "scenario_id": "random-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 4,
+      "cell_id": "0a95273d-8669-5cf5-b5d3-afe5d81921d0",
+      "ordinal": 131,
+      "scenario_id": "random-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 4,
+      "cell_id": "7d806a9a-deef-55e7-a8c7-6b6b2a9f065e",
+      "ordinal": 132,
+      "scenario_id": "random-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 4,
+      "cell_id": "f15d6009-bde7-5713-8b5c-73341a1d4e0f",
+      "ordinal": 133,
+      "scenario_id": "burst-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 4,
+      "cell_id": "4b20e8a7-35ff-5a7a-bda1-f7dd7313d95b",
+      "ordinal": 134,
+      "scenario_id": "burst-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 4,
+      "cell_id": "d6cde389-fee5-53a8-b588-020ef088d7d2",
+      "ordinal": 135,
+      "scenario_id": "burst-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 4,
+      "cell_id": "971bf598-f341-5b03-a480-922854c29162",
+      "ordinal": 136,
+      "scenario_id": "burst-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 4,
+      "cell_id": "607e0db2-f3ac-5416-95e1-d56edc4c43b9",
+      "ordinal": 137,
+      "scenario_id": "burst-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 4,
+      "cell_id": "4bf2badf-6ad2-5042-9cbf-6a74389b7a8a",
+      "ordinal": 138,
+      "scenario_id": "burst-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 4,
+      "cell_id": "d6463723-0302-53b6-8586-d45640c804f8",
+      "ordinal": 139,
+      "scenario_id": "compound",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 4,
+      "cell_id": "ef98946a-3839-5307-82a4-d1b6b615b4fb",
+      "ordinal": 140,
+      "scenario_id": "compound",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 4,
+      "cell_id": "67f3546a-98aa-5782-b472-385a40d49eaa",
+      "ordinal": 141,
+      "scenario_id": "compound",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 4,
+      "cell_id": "ab3710dd-1530-5b1e-b91f-c9f4e2334b7b",
+      "ordinal": 142,
+      "scenario_id": "compound",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 4,
+      "cell_id": "19b0ed10-43aa-556a-b94a-1b3b90436fee",
+      "ordinal": 143,
+      "scenario_id": "compound",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 4,
+      "cell_id": "c0662b6b-067e-57bc-bc88-bd900c0d4c11",
+      "ordinal": 144,
+      "scenario_id": "compound",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 5,
+      "cell_id": "d74d49bf-890b-5f93-a575-dc26088ffdd6",
+      "ordinal": 145,
+      "scenario_id": "baseline",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 5,
+      "cell_id": "e5820ff3-fb32-5c89-aca7-37ad0f2831ff",
+      "ordinal": 146,
+      "scenario_id": "baseline",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 5,
+      "cell_id": "8e28ae3a-4b99-5472-b0ab-f6a37fe752b6",
+      "ordinal": 147,
+      "scenario_id": "baseline",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 5,
+      "cell_id": "f4948340-fbd8-58ea-9a91-6eb88c875fb4",
+      "ordinal": 148,
+      "scenario_id": "baseline",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 5,
+      "cell_id": "df8ad715-3f29-5567-924f-b8fd145141a7",
+      "ordinal": 149,
+      "scenario_id": "baseline",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 5,
+      "cell_id": "51d34d14-cc23-5864-9290-72c9a18d223e",
+      "ordinal": 150,
+      "scenario_id": "baseline",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 5,
+      "cell_id": "0b511838-ab8e-5254-802d-b7c3dd344f07",
+      "ordinal": 151,
+      "scenario_id": "latency-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 5,
+      "cell_id": "4fec4a66-7625-5a4b-bd23-91ce016d3862",
+      "ordinal": 152,
+      "scenario_id": "latency-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 5,
+      "cell_id": "c1265e92-2c3a-5119-a6c6-b6b236234b18",
+      "ordinal": 153,
+      "scenario_id": "latency-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 5,
+      "cell_id": "848b4a41-594c-5a61-be5f-87df36d79f59",
+      "ordinal": 154,
+      "scenario_id": "latency-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 5,
+      "cell_id": "e8e94662-1007-5311-b646-4c905f755242",
+      "ordinal": 155,
+      "scenario_id": "latency-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 5,
+      "cell_id": "07121385-0b8f-532c-a2f4-129f486f450a",
+      "ordinal": 156,
+      "scenario_id": "latency-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 5,
+      "cell_id": "6b753f82-4d1c-5303-a5a0-2a1cb8a6735b",
+      "ordinal": 157,
+      "scenario_id": "jitter-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 5,
+      "cell_id": "53fbb105-6b69-5678-b74a-8ef87dac56ae",
+      "ordinal": 158,
+      "scenario_id": "jitter-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 5,
+      "cell_id": "5ff6a989-7bc9-56f9-806d-c6a465024728",
+      "ordinal": 159,
+      "scenario_id": "jitter-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 5,
+      "cell_id": "0b488b73-dd42-54ee-8795-c7be4e51fc11",
+      "ordinal": 160,
+      "scenario_id": "jitter-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 5,
+      "cell_id": "b00878f0-efe9-5c1e-9eed-17fd2e2f5bd4",
+      "ordinal": 161,
+      "scenario_id": "jitter-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 5,
+      "cell_id": "36a63062-5fa6-5f68-8c15-f4f1878e3ebb",
+      "ordinal": 162,
+      "scenario_id": "jitter-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 5,
+      "cell_id": "549ee36a-61c9-50df-a45f-22df7eff9a81",
+      "ordinal": 163,
+      "scenario_id": "random-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 5,
+      "cell_id": "34d2b883-8dd9-522f-8859-dad37ad6ce77",
+      "ordinal": 164,
+      "scenario_id": "random-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 5,
+      "cell_id": "fcb234f3-2000-588e-9eb4-7992fee5be8b",
+      "ordinal": 165,
+      "scenario_id": "random-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 5,
+      "cell_id": "8da4a48d-2314-5097-9a1f-6b7765039e8f",
+      "ordinal": 166,
+      "scenario_id": "random-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 5,
+      "cell_id": "81702a10-5655-5f2c-8d52-3557fd86cc1a",
+      "ordinal": 167,
+      "scenario_id": "random-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 5,
+      "cell_id": "5bc30dbf-6331-5676-a498-37e87d4382b4",
+      "ordinal": 168,
+      "scenario_id": "random-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 5,
+      "cell_id": "cd7347ab-999b-58c0-8651-4f41e29259d3",
+      "ordinal": 169,
+      "scenario_id": "burst-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 5,
+      "cell_id": "ee103172-29e0-58ad-be11-002229d18432",
+      "ordinal": 170,
+      "scenario_id": "burst-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 5,
+      "cell_id": "8de63208-c89e-509d-a14b-e7b7b62eae6f",
+      "ordinal": 171,
+      "scenario_id": "burst-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 5,
+      "cell_id": "bd3a42f2-f223-5226-aa4c-95761e57bc9d",
+      "ordinal": 172,
+      "scenario_id": "burst-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 5,
+      "cell_id": "72515a8a-aa1c-5e97-b9e3-5a1d21a116a2",
+      "ordinal": 173,
+      "scenario_id": "burst-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 5,
+      "cell_id": "59972927-0707-5a92-83e3-01b8b7c172cd",
+      "ordinal": 174,
+      "scenario_id": "burst-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 5,
+      "cell_id": "4c1f6495-f366-5a67-b308-4c71c777d5c9",
+      "ordinal": 175,
+      "scenario_id": "compound",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 5,
+      "cell_id": "d016d2b2-0d7e-5d9c-a962-8047fb4dbb6d",
+      "ordinal": 176,
+      "scenario_id": "compound",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 5,
+      "cell_id": "da5557ae-ec55-5966-8f08-a80f6daa62e2",
+      "ordinal": 177,
+      "scenario_id": "compound",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 5,
+      "cell_id": "9bd0d8a7-a52f-54a4-a964-95b30cc8d2a7",
+      "ordinal": 178,
+      "scenario_id": "compound",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 5,
+      "cell_id": "ac153e70-e189-5960-bbb4-cfb4530a1c0e",
+      "ordinal": 179,
+      "scenario_id": "compound",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 5,
+      "cell_id": "caddf5a8-34f8-582f-8f91-bfc54c3eeb30",
+      "ordinal": 180,
+      "scenario_id": "compound",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 6,
+      "cell_id": "ae2deecb-491b-5c82-ab71-648dd54c9426",
+      "ordinal": 181,
+      "scenario_id": "baseline",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 6,
+      "cell_id": "3ad8f942-f884-5a48-a7a3-b33d59d3adf1",
+      "ordinal": 182,
+      "scenario_id": "baseline",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 6,
+      "cell_id": "06335d4d-2b79-54f1-a1b2-da9877df45f4",
+      "ordinal": 183,
+      "scenario_id": "baseline",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 6,
+      "cell_id": "c64c479b-5793-5a5e-bb72-8e986af147e8",
+      "ordinal": 184,
+      "scenario_id": "baseline",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 6,
+      "cell_id": "ea57acee-b75d-5fa6-b715-9b6557c6a558",
+      "ordinal": 185,
+      "scenario_id": "baseline",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 6,
+      "cell_id": "786514d2-9010-5b1c-9068-5a50f269caf3",
+      "ordinal": 186,
+      "scenario_id": "baseline",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 6,
+      "cell_id": "278008d5-d389-50c1-8c47-8bb93dc09fd7",
+      "ordinal": 187,
+      "scenario_id": "latency-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 6,
+      "cell_id": "16d20d51-7d9f-583c-b112-522b623b347d",
+      "ordinal": 188,
+      "scenario_id": "latency-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 6,
+      "cell_id": "33c7dfa6-9033-56a3-b772-cbdf85b2d923",
+      "ordinal": 189,
+      "scenario_id": "latency-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 6,
+      "cell_id": "37d87de2-da28-5f52-9406-c9c1e1a90333",
+      "ordinal": 190,
+      "scenario_id": "latency-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 6,
+      "cell_id": "f57f15ee-4279-56f8-834e-0eadc1ac2493",
+      "ordinal": 191,
+      "scenario_id": "latency-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 6,
+      "cell_id": "2ecd29db-db95-57ae-aa7f-679eeaef39c0",
+      "ordinal": 192,
+      "scenario_id": "latency-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 6,
+      "cell_id": "8cac6870-b37d-5cce-b96f-6d5f48fc159f",
+      "ordinal": 193,
+      "scenario_id": "jitter-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 6,
+      "cell_id": "d400587c-4842-5176-bfd7-02638a6f8fa9",
+      "ordinal": 194,
+      "scenario_id": "jitter-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 6,
+      "cell_id": "63b077f0-f1c5-5461-8591-2af8dfd60777",
+      "ordinal": 195,
+      "scenario_id": "jitter-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 6,
+      "cell_id": "b463c3d7-f3d4-5841-9697-97598ffa9307",
+      "ordinal": 196,
+      "scenario_id": "jitter-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 6,
+      "cell_id": "51e771fc-f7a1-5f52-b108-d26e61e98dd9",
+      "ordinal": 197,
+      "scenario_id": "jitter-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 6,
+      "cell_id": "08160ad4-0340-51f4-8b45-240127a9348a",
+      "ordinal": 198,
+      "scenario_id": "jitter-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 6,
+      "cell_id": "c0a83cbd-cf0a-5251-a044-14a39ee59651",
+      "ordinal": 199,
+      "scenario_id": "random-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 6,
+      "cell_id": "26cffc0f-f767-5348-ab44-9ab3d55a78a7",
+      "ordinal": 200,
+      "scenario_id": "random-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 6,
+      "cell_id": "e7f0945b-002d-5a9b-b42e-03c98c642b09",
+      "ordinal": 201,
+      "scenario_id": "random-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 6,
+      "cell_id": "21b46851-eb1f-5f6a-8f61-cebe8cc5c582",
+      "ordinal": 202,
+      "scenario_id": "random-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 6,
+      "cell_id": "1dfda6b4-9c41-5737-ac8e-b711cd9cefa6",
+      "ordinal": 203,
+      "scenario_id": "random-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 6,
+      "cell_id": "e3ddea73-b7bd-502d-ae32-00ebd3cd27bf",
+      "ordinal": 204,
+      "scenario_id": "random-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 6,
+      "cell_id": "ec69b171-80d0-5792-a23f-7918cda52f37",
+      "ordinal": 205,
+      "scenario_id": "burst-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 6,
+      "cell_id": "c71dd5d2-928e-550c-8e48-288b74f7a730",
+      "ordinal": 206,
+      "scenario_id": "burst-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 6,
+      "cell_id": "63841971-50b0-527a-afcc-b816eccc91a0",
+      "ordinal": 207,
+      "scenario_id": "burst-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 6,
+      "cell_id": "b6678355-e475-538e-bc19-992590599992",
+      "ordinal": 208,
+      "scenario_id": "burst-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 6,
+      "cell_id": "db8162e8-321f-5f2c-8b6b-08ef0023c297",
+      "ordinal": 209,
+      "scenario_id": "burst-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 6,
+      "cell_id": "bb9f6e60-a63d-52b9-a0d4-27725164f551",
+      "ordinal": 210,
+      "scenario_id": "burst-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 6,
+      "cell_id": "dcab11e8-b378-51a3-8c19-19b7be1b834a",
+      "ordinal": 211,
+      "scenario_id": "compound",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 6,
+      "cell_id": "3b0e66b4-d1c7-5311-82a0-315acf06b659",
+      "ordinal": 212,
+      "scenario_id": "compound",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 6,
+      "cell_id": "3964f6b1-d2a5-5bfc-9d65-6a63e3ac01b5",
+      "ordinal": 213,
+      "scenario_id": "compound",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 6,
+      "cell_id": "bfe08f20-3d39-5d0d-b705-92e66706fbcb",
+      "ordinal": 214,
+      "scenario_id": "compound",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 6,
+      "cell_id": "128a4e6c-31c4-5f4c-a1f3-25a848568260",
+      "ordinal": 215,
+      "scenario_id": "compound",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 6,
+      "cell_id": "e6581a58-9bf0-5c31-9a40-42d7505b9c42",
+      "ordinal": 216,
+      "scenario_id": "compound",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 7,
+      "cell_id": "16606e9e-fd14-5366-bc0f-1b3ee4d1dc6a",
+      "ordinal": 217,
+      "scenario_id": "baseline",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 7,
+      "cell_id": "0d294770-c093-534d-88b6-808fdd3632d2",
+      "ordinal": 218,
+      "scenario_id": "baseline",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 7,
+      "cell_id": "46cea927-e205-535a-b2ea-671d998fbd7d",
+      "ordinal": 219,
+      "scenario_id": "baseline",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 7,
+      "cell_id": "29dbe56c-ef39-565c-b7b5-d8af91525eea",
+      "ordinal": 220,
+      "scenario_id": "baseline",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 7,
+      "cell_id": "5af8c18b-95ca-5d11-9ba1-50c1e2262d1e",
+      "ordinal": 221,
+      "scenario_id": "baseline",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 7,
+      "cell_id": "551e10d6-8935-562d-84a6-c30b2b957fbf",
+      "ordinal": 222,
+      "scenario_id": "baseline",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 7,
+      "cell_id": "d6d26f8f-1e54-5854-b150-bd79b9a33524",
+      "ordinal": 223,
+      "scenario_id": "latency-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 7,
+      "cell_id": "fee9b9ca-26c9-50f4-939d-39a6fe023456",
+      "ordinal": 224,
+      "scenario_id": "latency-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 7,
+      "cell_id": "06d26757-b813-53be-99ab-b9a86b756ea9",
+      "ordinal": 225,
+      "scenario_id": "latency-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 7,
+      "cell_id": "84eddc43-1851-5362-bd27-a51325ac1589",
+      "ordinal": 226,
+      "scenario_id": "latency-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 7,
+      "cell_id": "32da0885-dfaf-5a32-8c97-29f794df1816",
+      "ordinal": 227,
+      "scenario_id": "latency-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 7,
+      "cell_id": "2baa99c2-dd25-5951-b756-d4679a0da8ec",
+      "ordinal": 228,
+      "scenario_id": "latency-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 7,
+      "cell_id": "d98e33dd-e07a-51c1-a167-101be002d4ee",
+      "ordinal": 229,
+      "scenario_id": "jitter-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 7,
+      "cell_id": "186e9c90-5a41-598c-9ae2-9cc6bd05e99b",
+      "ordinal": 230,
+      "scenario_id": "jitter-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 7,
+      "cell_id": "4c90c235-c64f-5262-9f1b-8a60e0c6e6ce",
+      "ordinal": 231,
+      "scenario_id": "jitter-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 7,
+      "cell_id": "353ddd6a-bd1f-5203-b486-beaf120a92e2",
+      "ordinal": 232,
+      "scenario_id": "jitter-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 7,
+      "cell_id": "a4d12806-0724-5c73-8d5b-023a87a10f84",
+      "ordinal": 233,
+      "scenario_id": "jitter-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 7,
+      "cell_id": "2ad13c3b-bcb2-518f-80c5-9c32e31435a9",
+      "ordinal": 234,
+      "scenario_id": "jitter-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 7,
+      "cell_id": "41025bba-8c2e-5cd8-b5a1-7a85bd9c61b3",
+      "ordinal": 235,
+      "scenario_id": "random-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 7,
+      "cell_id": "61245117-a119-57b5-b8b3-247f4558d124",
+      "ordinal": 236,
+      "scenario_id": "random-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 7,
+      "cell_id": "cfb55f24-367d-5d93-ae17-0901fe469afa",
+      "ordinal": 237,
+      "scenario_id": "random-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 7,
+      "cell_id": "cd861874-7fb6-56a1-88cf-64001e4db544",
+      "ordinal": 238,
+      "scenario_id": "random-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 7,
+      "cell_id": "f8ecb4db-22d8-56c8-b4e3-e2858e31e407",
+      "ordinal": 239,
+      "scenario_id": "random-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 7,
+      "cell_id": "039dd924-f9f6-518b-ab97-3f4540a1762c",
+      "ordinal": 240,
+      "scenario_id": "random-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 7,
+      "cell_id": "bd42f8c8-f696-5a77-9dc1-8ad0f6a4e308",
+      "ordinal": 241,
+      "scenario_id": "burst-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 7,
+      "cell_id": "c1ac3d6a-7556-5262-91e4-ad6e22186c53",
+      "ordinal": 242,
+      "scenario_id": "burst-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 7,
+      "cell_id": "e23fc081-68ab-5066-a46f-4a1580bb01c0",
+      "ordinal": 243,
+      "scenario_id": "burst-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 7,
+      "cell_id": "0f3a7f6f-7659-53f4-8d92-5974de87fd8b",
+      "ordinal": 244,
+      "scenario_id": "burst-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 7,
+      "cell_id": "ad60696c-d35d-52fa-b128-c5a40e8dd3d8",
+      "ordinal": 245,
+      "scenario_id": "burst-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 7,
+      "cell_id": "e51a6095-bf8d-5d50-8d5c-3c9687fb98bb",
+      "ordinal": 246,
+      "scenario_id": "burst-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 7,
+      "cell_id": "3b3652a2-afd9-50fc-8b61-47bb4dbd0671",
+      "ordinal": 247,
+      "scenario_id": "compound",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 7,
+      "cell_id": "ecddb6af-f946-51a7-9dd0-2ab809aa08c1",
+      "ordinal": 248,
+      "scenario_id": "compound",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 7,
+      "cell_id": "b3310204-1e14-5eee-aa15-94d4bb1f2e87",
+      "ordinal": 249,
+      "scenario_id": "compound",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 7,
+      "cell_id": "baefe926-3b06-5f7c-be5b-8056f019884e",
+      "ordinal": 250,
+      "scenario_id": "compound",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 7,
+      "cell_id": "4f33a919-d4d6-5f05-8244-aaad335c2622",
+      "ordinal": 251,
+      "scenario_id": "compound",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 7,
+      "cell_id": "c31d9fca-a5e7-5d14-9212-eba1edd50d19",
+      "ordinal": 252,
+      "scenario_id": "compound",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 8,
+      "cell_id": "e39509d9-38df-5887-afb6-5b87bce92fca",
+      "ordinal": 253,
+      "scenario_id": "baseline",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 8,
+      "cell_id": "81370cc6-6df2-52cf-aff1-2a1aa81f2725",
+      "ordinal": 254,
+      "scenario_id": "baseline",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 8,
+      "cell_id": "ffc89d9d-0099-5047-8bef-e7065cd0234a",
+      "ordinal": 255,
+      "scenario_id": "baseline",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 8,
+      "cell_id": "04ea8db2-f5c2-5c9c-b5a2-53288657e5bd",
+      "ordinal": 256,
+      "scenario_id": "baseline",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 8,
+      "cell_id": "b2c0b088-d45e-5fb9-b4d8-c020b955949b",
+      "ordinal": 257,
+      "scenario_id": "baseline",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 8,
+      "cell_id": "085c4db2-4c62-56f3-87b9-2fae7f885ed3",
+      "ordinal": 258,
+      "scenario_id": "baseline",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 8,
+      "cell_id": "f1d2ce36-9ea4-5380-b244-bd27c9228c29",
+      "ordinal": 259,
+      "scenario_id": "latency-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 8,
+      "cell_id": "489d2588-09b0-5d64-a27b-99732f1ce1df",
+      "ordinal": 260,
+      "scenario_id": "latency-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 8,
+      "cell_id": "88561088-8fa8-5e7c-abb2-a2040333aa18",
+      "ordinal": 261,
+      "scenario_id": "latency-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 8,
+      "cell_id": "bd086fe6-812b-52ec-bf1c-58fdd6b78e41",
+      "ordinal": 262,
+      "scenario_id": "latency-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 8,
+      "cell_id": "27f70e64-d1f1-5337-a74e-5788dc031d6d",
+      "ordinal": 263,
+      "scenario_id": "latency-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 8,
+      "cell_id": "0075c339-a268-56f9-b545-1de4c02df187",
+      "ordinal": 264,
+      "scenario_id": "latency-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 8,
+      "cell_id": "4449f2e5-bb63-54f6-bf3e-32db89db750f",
+      "ordinal": 265,
+      "scenario_id": "jitter-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 8,
+      "cell_id": "aa1b42ef-cfe1-5164-829b-1e31b8edc09d",
+      "ordinal": 266,
+      "scenario_id": "jitter-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 8,
+      "cell_id": "7ebf7edc-df76-5f3e-a610-e22e79681abd",
+      "ordinal": 267,
+      "scenario_id": "jitter-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 8,
+      "cell_id": "e417d4e1-cc07-5df4-ae7f-e4c7a2d0e6dc",
+      "ordinal": 268,
+      "scenario_id": "jitter-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 8,
+      "cell_id": "0c4046e9-257c-5898-9142-884364cdd818",
+      "ordinal": 269,
+      "scenario_id": "jitter-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 8,
+      "cell_id": "91efb8d7-11b9-543b-8f99-fc80ea4d3084",
+      "ordinal": 270,
+      "scenario_id": "jitter-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 8,
+      "cell_id": "b45fa69e-c15c-59c2-af65-4c0ed1c33d67",
+      "ordinal": 271,
+      "scenario_id": "random-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 8,
+      "cell_id": "3e1129bf-ed80-59e4-ab00-10bfa419afff",
+      "ordinal": 272,
+      "scenario_id": "random-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 8,
+      "cell_id": "c0fab906-c06e-5abd-8eb8-7a9ba0b74569",
+      "ordinal": 273,
+      "scenario_id": "random-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 8,
+      "cell_id": "85196728-0d6a-572d-9f79-f150d665c8c6",
+      "ordinal": 274,
+      "scenario_id": "random-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 8,
+      "cell_id": "e68d360d-ddcb-5794-9d06-b62c69489a8a",
+      "ordinal": 275,
+      "scenario_id": "random-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 8,
+      "cell_id": "2619e5af-bfe1-5ac0-b966-a31b0fac8c38",
+      "ordinal": 276,
+      "scenario_id": "random-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 8,
+      "cell_id": "49bd99bd-f8c8-5389-9801-ea677262bcb8",
+      "ordinal": 277,
+      "scenario_id": "burst-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 8,
+      "cell_id": "b4a00427-6728-5a5c-bfbd-2aa08e148e1c",
+      "ordinal": 278,
+      "scenario_id": "burst-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 8,
+      "cell_id": "13146e59-4055-59fd-a590-ba947f380a35",
+      "ordinal": 279,
+      "scenario_id": "burst-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 8,
+      "cell_id": "7c2b65ce-2063-5502-b830-de5d61d585a1",
+      "ordinal": 280,
+      "scenario_id": "burst-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 8,
+      "cell_id": "530f93fc-95aa-5678-9a73-b9b81bc99464",
+      "ordinal": 281,
+      "scenario_id": "burst-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 8,
+      "cell_id": "3ec949d1-4c77-5f57-b3d6-24fc2c6a7853",
+      "ordinal": 282,
+      "scenario_id": "burst-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 8,
+      "cell_id": "71eca9e7-059e-571c-b572-ff7113033952",
+      "ordinal": 283,
+      "scenario_id": "compound",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 8,
+      "cell_id": "ce6bbd04-4b7a-58a7-8c5e-55e99842b102",
+      "ordinal": 284,
+      "scenario_id": "compound",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 8,
+      "cell_id": "6d5bd97a-180a-53b3-99dc-5557d5ba2988",
+      "ordinal": 285,
+      "scenario_id": "compound",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 8,
+      "cell_id": "f2cc5e2a-96f7-54d9-b722-1ab81fd3e468",
+      "ordinal": 286,
+      "scenario_id": "compound",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 8,
+      "cell_id": "03a2ad31-50f6-5418-8dd1-db47159de211",
+      "ordinal": 287,
+      "scenario_id": "compound",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 8,
+      "cell_id": "287ed588-2922-5525-81a6-d097f69bceac",
+      "ordinal": 288,
+      "scenario_id": "compound",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 9,
+      "cell_id": "18d0e988-5a2e-5b1c-9542-67a4f96e3299",
+      "ordinal": 289,
+      "scenario_id": "baseline",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 9,
+      "cell_id": "a03d1982-1edb-51a2-871c-24b9d73d06eb",
+      "ordinal": 290,
+      "scenario_id": "baseline",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 9,
+      "cell_id": "be912333-193b-5e9a-95e6-0ab6d78236f1",
+      "ordinal": 291,
+      "scenario_id": "baseline",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 9,
+      "cell_id": "b9bd6097-5d76-5c42-a278-00032f837878",
+      "ordinal": 292,
+      "scenario_id": "baseline",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 9,
+      "cell_id": "0496aca4-1d38-596c-8c37-d8ef5b99a982",
+      "ordinal": 293,
+      "scenario_id": "baseline",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 9,
+      "cell_id": "a11cbf8c-112d-5ba0-a51d-0b1768659a41",
+      "ordinal": 294,
+      "scenario_id": "baseline",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 9,
+      "cell_id": "82bda5d0-3edf-59a1-9921-89e535c4142c",
+      "ordinal": 295,
+      "scenario_id": "latency-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 9,
+      "cell_id": "a1bcdeac-2dc3-563b-be37-87d8751677e5",
+      "ordinal": 296,
+      "scenario_id": "latency-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 9,
+      "cell_id": "8fc375ab-d059-5fd0-b91c-581e490e6b98",
+      "ordinal": 297,
+      "scenario_id": "latency-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 9,
+      "cell_id": "f7850e73-a4c5-594c-a5df-ae637c34b082",
+      "ordinal": 298,
+      "scenario_id": "latency-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 9,
+      "cell_id": "ffc90d43-3c46-5f7f-8a11-fd0104523c9e",
+      "ordinal": 299,
+      "scenario_id": "latency-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 9,
+      "cell_id": "3bd374ef-265e-565f-a87d-a16d38341f63",
+      "ordinal": 300,
+      "scenario_id": "latency-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 9,
+      "cell_id": "4b38a934-bfcf-5ef9-9f70-e4269c18a5db",
+      "ordinal": 301,
+      "scenario_id": "jitter-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 9,
+      "cell_id": "e3af9279-330c-571c-8e57-9601b6ce52fd",
+      "ordinal": 302,
+      "scenario_id": "jitter-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 9,
+      "cell_id": "cc5d73ce-c8e7-5973-bc63-b7c423f9afbf",
+      "ordinal": 303,
+      "scenario_id": "jitter-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 9,
+      "cell_id": "4f661432-6bda-5ad5-ab5e-b53e540641d3",
+      "ordinal": 304,
+      "scenario_id": "jitter-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 9,
+      "cell_id": "48ce0b54-4daf-5b3b-8804-0079242dc93b",
+      "ordinal": 305,
+      "scenario_id": "jitter-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 9,
+      "cell_id": "5e2448c0-6a85-528c-ac24-598e8a482ad9",
+      "ordinal": 306,
+      "scenario_id": "jitter-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 9,
+      "cell_id": "f48e3a55-19ba-5aaf-bdd6-bba4c445fbd1",
+      "ordinal": 307,
+      "scenario_id": "random-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 9,
+      "cell_id": "27d6bd9c-cf6e-51a4-959e-d4953a6286a8",
+      "ordinal": 308,
+      "scenario_id": "random-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 9,
+      "cell_id": "f42393e4-64fe-522c-923a-ec6e976fc416",
+      "ordinal": 309,
+      "scenario_id": "random-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 9,
+      "cell_id": "2970eb88-3c77-5ae4-b7a8-465178969d5e",
+      "ordinal": 310,
+      "scenario_id": "random-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 9,
+      "cell_id": "83b1ec0e-7897-580b-a606-1948b074720a",
+      "ordinal": 311,
+      "scenario_id": "random-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 9,
+      "cell_id": "8c816264-2e2d-5aae-beb4-9030554d56e0",
+      "ordinal": 312,
+      "scenario_id": "random-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 9,
+      "cell_id": "77145ee9-a0b2-5d85-b24a-a5ab14a18d8b",
+      "ordinal": 313,
+      "scenario_id": "burst-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 9,
+      "cell_id": "da44e524-7ca4-537d-a39b-56a166bc2ee5",
+      "ordinal": 314,
+      "scenario_id": "burst-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 9,
+      "cell_id": "a85d96ee-fe91-5f9a-bd98-239e9cfc7d67",
+      "ordinal": 315,
+      "scenario_id": "burst-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 9,
+      "cell_id": "91adc305-ea8b-5290-b761-7deb6912c565",
+      "ordinal": 316,
+      "scenario_id": "burst-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 9,
+      "cell_id": "80d75be8-6773-5ebe-9ff9-6e8c87549b18",
+      "ordinal": 317,
+      "scenario_id": "burst-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 9,
+      "cell_id": "b41b13f4-6435-5e44-9762-d8e1d7f3e506",
+      "ordinal": 318,
+      "scenario_id": "burst-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 9,
+      "cell_id": "5042b269-eb58-5c6a-a028-52cb675f0ae8",
+      "ordinal": 319,
+      "scenario_id": "compound",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 9,
+      "cell_id": "b6b18f19-6b1e-5346-9e26-358782b6e744",
+      "ordinal": 320,
+      "scenario_id": "compound",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 9,
+      "cell_id": "cdc9deb0-df17-5928-8289-a00cfca1a809",
+      "ordinal": 321,
+      "scenario_id": "compound",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 9,
+      "cell_id": "6af77143-f1c8-5e17-ba6e-cf19502d7ffd",
+      "ordinal": 322,
+      "scenario_id": "compound",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 9,
+      "cell_id": "4a84f431-2e86-5be1-a67c-937a6ac7aaa8",
+      "ordinal": 323,
+      "scenario_id": "compound",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 9,
+      "cell_id": "10ab4a99-ebb1-5d72-b952-b4e6e2246a41",
+      "ordinal": 324,
+      "scenario_id": "compound",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 10,
+      "cell_id": "0f4e0787-52a5-5fc0-bb86-28800fba867c",
+      "ordinal": 325,
+      "scenario_id": "baseline",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 10,
+      "cell_id": "c7a3048f-94cb-5ffe-b8e7-3e43167edeac",
+      "ordinal": 326,
+      "scenario_id": "baseline",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 10,
+      "cell_id": "52b25c61-088e-5697-a916-fdf4cde8227c",
+      "ordinal": 327,
+      "scenario_id": "baseline",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 10,
+      "cell_id": "c7bab079-0cfb-5a0e-903e-70beac9e7ee3",
+      "ordinal": 328,
+      "scenario_id": "baseline",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 10,
+      "cell_id": "c5c4701a-0a81-5b2a-94a2-5a8c0510eded",
+      "ordinal": 329,
+      "scenario_id": "baseline",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 10,
+      "cell_id": "9640c8a3-a1b5-5450-b523-db408df95dc1",
+      "ordinal": 330,
+      "scenario_id": "baseline",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 10,
+      "cell_id": "3e3e9e66-f381-5ee3-a5d7-04f8b57c7ed1",
+      "ordinal": 331,
+      "scenario_id": "latency-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 10,
+      "cell_id": "a054c9d5-e363-5028-8500-287d9a52f63f",
+      "ordinal": 332,
+      "scenario_id": "latency-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 10,
+      "cell_id": "e31cb817-b233-5ebf-88ac-cd76cff2cdd5",
+      "ordinal": 333,
+      "scenario_id": "latency-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 10,
+      "cell_id": "665648cd-a656-52e1-9790-b6dfcea5a3c1",
+      "ordinal": 334,
+      "scenario_id": "latency-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 10,
+      "cell_id": "33439512-edb1-56a6-b893-87d3d1faf2d8",
+      "ordinal": 335,
+      "scenario_id": "latency-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 10,
+      "cell_id": "cca1e255-f241-5df2-91a6-df873781cb27",
+      "ordinal": 336,
+      "scenario_id": "latency-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 10,
+      "cell_id": "dc39f660-8764-5f70-b90f-2386a568edff",
+      "ordinal": 337,
+      "scenario_id": "jitter-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 10,
+      "cell_id": "ded50704-6418-5334-9ca6-3c22677d8ac4",
+      "ordinal": 338,
+      "scenario_id": "jitter-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 10,
+      "cell_id": "c4b6fcdc-533e-5d96-a7a9-40aba94a71a5",
+      "ordinal": 339,
+      "scenario_id": "jitter-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 10,
+      "cell_id": "89a880e6-d1ca-5284-95d1-d98315afba81",
+      "ordinal": 340,
+      "scenario_id": "jitter-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 10,
+      "cell_id": "0ef26af7-add0-5f63-9682-36500d6d38ab",
+      "ordinal": 341,
+      "scenario_id": "jitter-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 10,
+      "cell_id": "1ea5afc7-89e5-5219-8819-58325a524aac",
+      "ordinal": 342,
+      "scenario_id": "jitter-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 10,
+      "cell_id": "e07e8fa2-733f-5462-91ad-79d355e5a664",
+      "ordinal": 343,
+      "scenario_id": "random-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 10,
+      "cell_id": "1aec61b7-1d85-58d9-9485-0dd51a024a6e",
+      "ordinal": 344,
+      "scenario_id": "random-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 10,
+      "cell_id": "bdd0a7bc-3aa0-51d5-93f1-7bf1314f0634",
+      "ordinal": 345,
+      "scenario_id": "random-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 10,
+      "cell_id": "033d2550-0f43-5a1b-97e9-51c059f76782",
+      "ordinal": 346,
+      "scenario_id": "random-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 10,
+      "cell_id": "ffca7d40-e9f9-51bb-a7ca-dfeb407c054f",
+      "ordinal": 347,
+      "scenario_id": "random-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 10,
+      "cell_id": "bc909ce2-20c6-5d4c-ab88-30f10e03fd02",
+      "ordinal": 348,
+      "scenario_id": "random-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 10,
+      "cell_id": "099d6363-0fbe-5e61-8056-08bf3e20a1a4",
+      "ordinal": 349,
+      "scenario_id": "burst-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 10,
+      "cell_id": "8c8611d3-f11f-5613-b19b-9850a1f982ae",
+      "ordinal": 350,
+      "scenario_id": "burst-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 10,
+      "cell_id": "b9ec845a-54f5-5bc9-aecf-a4e98ae96b10",
+      "ordinal": 351,
+      "scenario_id": "burst-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 10,
+      "cell_id": "9c31fbdb-b47b-50b2-9918-010f4e1721b9",
+      "ordinal": 352,
+      "scenario_id": "burst-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 10,
+      "cell_id": "3477ee0e-c76a-52bf-9f92-9c159f382a23",
+      "ordinal": 353,
+      "scenario_id": "burst-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 10,
+      "cell_id": "400072e0-f6b5-54da-aed8-bdbc3230b3af",
+      "ordinal": 354,
+      "scenario_id": "burst-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 10,
+      "cell_id": "54ca97bf-2490-554e-93cb-88d8093b6c9b",
+      "ordinal": 355,
+      "scenario_id": "compound",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 10,
+      "cell_id": "92cb3241-c1f0-577f-88d2-c0da1de360ca",
+      "ordinal": 356,
+      "scenario_id": "compound",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 10,
+      "cell_id": "fcd8fa92-f754-5b11-bfbc-5efda0a4a9db",
+      "ordinal": 357,
+      "scenario_id": "compound",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 10,
+      "cell_id": "635be19e-5414-5547-ab9a-fd4acf6d0f27",
+      "ordinal": 358,
+      "scenario_id": "compound",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 10,
+      "cell_id": "2ad5fd7b-ae36-56b5-9738-d45d1324010b",
+      "ordinal": 359,
+      "scenario_id": "compound",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 10,
+      "cell_id": "f7760f5d-dba4-5ee3-a5d5-4b1924f6651b",
+      "ordinal": 360,
+      "scenario_id": "compound",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 11,
+      "cell_id": "9bfa348a-7efe-596d-9b20-39e5162c4bf2",
+      "ordinal": 361,
+      "scenario_id": "baseline",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 11,
+      "cell_id": "dffb6a63-cea6-5a1d-b7d4-775ea4f2788e",
+      "ordinal": 362,
+      "scenario_id": "baseline",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 11,
+      "cell_id": "5f84c760-59aa-528c-84c4-014e62748c13",
+      "ordinal": 363,
+      "scenario_id": "baseline",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 11,
+      "cell_id": "ae5c762e-ca5c-5845-82d5-d662e6834cd5",
+      "ordinal": 364,
+      "scenario_id": "baseline",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 11,
+      "cell_id": "28339680-684c-5c3a-837c-cfe906129e32",
+      "ordinal": 365,
+      "scenario_id": "baseline",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 11,
+      "cell_id": "b1f4c8c7-edf4-5386-97eb-93fb2090e3c3",
+      "ordinal": 366,
+      "scenario_id": "baseline",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 11,
+      "cell_id": "e7eced5f-353d-50d8-bab1-a89aad2c0e66",
+      "ordinal": 367,
+      "scenario_id": "latency-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 11,
+      "cell_id": "b7749f63-290d-5ecd-9bc4-891b3d97df38",
+      "ordinal": 368,
+      "scenario_id": "latency-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 11,
+      "cell_id": "a517408d-72f1-530c-a858-a0bf2c249d3f",
+      "ordinal": 369,
+      "scenario_id": "latency-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 11,
+      "cell_id": "d518de8e-863d-53d5-909d-5243121faf65",
+      "ordinal": 370,
+      "scenario_id": "latency-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 11,
+      "cell_id": "03816806-b3f2-51df-93a8-02626a38a6c4",
+      "ordinal": 371,
+      "scenario_id": "latency-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 11,
+      "cell_id": "6ec09555-9aaf-5335-aea6-2407097a03fc",
+      "ordinal": 372,
+      "scenario_id": "latency-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 11,
+      "cell_id": "6b78061f-28fa-5032-9169-bde15dc00c67",
+      "ordinal": 373,
+      "scenario_id": "jitter-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 11,
+      "cell_id": "2a91eb2c-ecea-5f1c-a4cc-0e1745271d79",
+      "ordinal": 374,
+      "scenario_id": "jitter-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 11,
+      "cell_id": "e279c788-4df7-560f-90c6-cd8f62124938",
+      "ordinal": 375,
+      "scenario_id": "jitter-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 11,
+      "cell_id": "66c64030-f727-598d-a459-54074227567d",
+      "ordinal": 376,
+      "scenario_id": "jitter-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 11,
+      "cell_id": "f9282bb2-190f-5dc0-9cb5-73a11d6559fb",
+      "ordinal": 377,
+      "scenario_id": "jitter-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 11,
+      "cell_id": "22de57f5-69fd-582e-b79d-c0bfa3f12965",
+      "ordinal": 378,
+      "scenario_id": "jitter-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 11,
+      "cell_id": "c5d8537f-5ec4-5c91-aca9-4afeeb944366",
+      "ordinal": 379,
+      "scenario_id": "random-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 11,
+      "cell_id": "846f0985-50e1-57f7-bdd7-65f1305207af",
+      "ordinal": 380,
+      "scenario_id": "random-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 11,
+      "cell_id": "53ce9bd7-02ba-57ce-a268-0fd1b7bcac84",
+      "ordinal": 381,
+      "scenario_id": "random-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 11,
+      "cell_id": "47f44708-8d1d-5289-a3a3-a2d60428b332",
+      "ordinal": 382,
+      "scenario_id": "random-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 11,
+      "cell_id": "4a100b64-06ed-5db2-afd1-632ebf9fb917",
+      "ordinal": 383,
+      "scenario_id": "random-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 11,
+      "cell_id": "f18d8a90-8d64-5d7c-9739-0a8137afdabe",
+      "ordinal": 384,
+      "scenario_id": "random-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 11,
+      "cell_id": "d3bac868-4ff5-5caf-9dde-070f73430f48",
+      "ordinal": 385,
+      "scenario_id": "burst-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 11,
+      "cell_id": "8bb5b332-c95a-5d62-9699-69785d57cfc7",
+      "ordinal": 386,
+      "scenario_id": "burst-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 11,
+      "cell_id": "e859edc4-d5e0-5ac3-9ff5-fd418f22f9ff",
+      "ordinal": 387,
+      "scenario_id": "burst-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 11,
+      "cell_id": "6814a9aa-4d1f-5acb-b373-72d31faeeb20",
+      "ordinal": 388,
+      "scenario_id": "burst-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 11,
+      "cell_id": "a77f77d8-1d35-5dfd-b417-94e7b436d741",
+      "ordinal": 389,
+      "scenario_id": "burst-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 11,
+      "cell_id": "3f224c11-15df-59ef-9648-3d077d58f656",
+      "ordinal": 390,
+      "scenario_id": "burst-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 11,
+      "cell_id": "7abeda89-4418-5859-8ed8-694acd358dc0",
+      "ordinal": 391,
+      "scenario_id": "compound",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 11,
+      "cell_id": "d54165e1-3f5a-5c1e-b384-54b61fe2d4ee",
+      "ordinal": 392,
+      "scenario_id": "compound",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 11,
+      "cell_id": "26a7a971-e748-529f-ae62-86502ae33bb9",
+      "ordinal": 393,
+      "scenario_id": "compound",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 11,
+      "cell_id": "25e85ed6-254c-5ffe-a6bc-33ea41f56d63",
+      "ordinal": 394,
+      "scenario_id": "compound",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 11,
+      "cell_id": "b2fa2bf3-852c-5a23-a03b-02e3280ba9f7",
+      "ordinal": 395,
+      "scenario_id": "compound",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 11,
+      "cell_id": "320c3553-104d-57e7-ab1b-7af0e2c2d8cc",
+      "ordinal": 396,
+      "scenario_id": "compound",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 12,
+      "cell_id": "5828407e-f194-5540-90aa-d9e10294d648",
+      "ordinal": 397,
+      "scenario_id": "baseline",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 12,
+      "cell_id": "fe2430a1-5d61-53c7-9ebf-86c94803252b",
+      "ordinal": 398,
+      "scenario_id": "baseline",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 12,
+      "cell_id": "255e79a3-005b-57ee-86ee-54016e4df6e8",
+      "ordinal": 399,
+      "scenario_id": "baseline",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 12,
+      "cell_id": "e4dcf50b-aee2-514d-b6b4-68f538364cef",
+      "ordinal": 400,
+      "scenario_id": "baseline",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 12,
+      "cell_id": "d80a69f7-d2ad-5f2a-a543-7897aec4feed",
+      "ordinal": 401,
+      "scenario_id": "baseline",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 12,
+      "cell_id": "c3a43ec6-51c6-5d31-a890-47d3300520a9",
+      "ordinal": 402,
+      "scenario_id": "baseline",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 12,
+      "cell_id": "72811ff2-62e9-56d0-8a59-74f87745d9aa",
+      "ordinal": 403,
+      "scenario_id": "latency-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 12,
+      "cell_id": "eb76763c-82d7-5be9-ae98-2dc352bc4851",
+      "ordinal": 404,
+      "scenario_id": "latency-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 12,
+      "cell_id": "6f03a794-f68b-50c8-809d-746ee01a169f",
+      "ordinal": 405,
+      "scenario_id": "latency-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 12,
+      "cell_id": "178d3931-af0e-564a-8a98-690f8de81f09",
+      "ordinal": 406,
+      "scenario_id": "latency-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 12,
+      "cell_id": "8c7c0936-5faa-52e2-bc84-3ac00cd2a27e",
+      "ordinal": 407,
+      "scenario_id": "latency-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 12,
+      "cell_id": "bd7c903f-18aa-587f-9bb9-10706444eaa2",
+      "ordinal": 408,
+      "scenario_id": "latency-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 12,
+      "cell_id": "64fa8f94-d909-5d83-af92-dcfcf34d5f0f",
+      "ordinal": 409,
+      "scenario_id": "jitter-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 12,
+      "cell_id": "fdf980cc-59d7-536f-af1f-b529ca0e784c",
+      "ordinal": 410,
+      "scenario_id": "jitter-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 12,
+      "cell_id": "c90c9b34-c9cc-5e69-8a52-9d95b09c4690",
+      "ordinal": 411,
+      "scenario_id": "jitter-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 12,
+      "cell_id": "c571a6ed-a014-5887-9441-b987f056550d",
+      "ordinal": 412,
+      "scenario_id": "jitter-step",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 12,
+      "cell_id": "ed59b17f-ac89-52a9-8385-6ddbebf3f44b",
+      "ordinal": 413,
+      "scenario_id": "jitter-step",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 12,
+      "cell_id": "3e1240e5-586f-59dc-8f94-7d1959a1755b",
+      "ordinal": 414,
+      "scenario_id": "jitter-step",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 12,
+      "cell_id": "67a11a85-5edc-500d-b65f-8b739b11e9ff",
+      "ordinal": 415,
+      "scenario_id": "random-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 12,
+      "cell_id": "800660ae-6797-5e72-b9e0-c0824d127f78",
+      "ordinal": 416,
+      "scenario_id": "random-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 12,
+      "cell_id": "24ada5b2-8ea1-5912-a25b-b9e31c25ced9",
+      "ordinal": 417,
+      "scenario_id": "random-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 12,
+      "cell_id": "12cf23b4-bb19-5769-b8ea-eed4e0be6c56",
+      "ordinal": 418,
+      "scenario_id": "random-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 12,
+      "cell_id": "21c8b374-b3b1-5b48-b2bc-c9edd499736f",
+      "ordinal": 419,
+      "scenario_id": "random-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 12,
+      "cell_id": "480d6cd3-fd8b-506f-9d5d-e1690587df64",
+      "ordinal": 420,
+      "scenario_id": "random-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 12,
+      "cell_id": "41cac7d1-0c17-5f9c-8140-f1e64ade279f",
+      "ordinal": 421,
+      "scenario_id": "burst-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 12,
+      "cell_id": "f42151bd-f5b0-51ca-89d9-6fff57a8253d",
+      "ordinal": 422,
+      "scenario_id": "burst-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 12,
+      "cell_id": "08f8cff1-5dc6-542c-9000-b30de7f6adce",
+      "ordinal": 423,
+      "scenario_id": "burst-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 12,
+      "cell_id": "0755f59c-fd23-5c31-a2d9-95d08eceff04",
+      "ordinal": 424,
+      "scenario_id": "burst-loss",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 12,
+      "cell_id": "ae30320f-0ad5-5c60-a9a7-f98d6983aceb",
+      "ordinal": 425,
+      "scenario_id": "burst-loss",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 12,
+      "cell_id": "ee121288-41e4-5b8a-9a3e-424e13662bbd",
+      "ordinal": 426,
+      "scenario_id": "burst-loss",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 12,
+      "cell_id": "7311ca15-98e4-5243-beff-8144f5bfe356",
+      "ordinal": 427,
+      "scenario_id": "compound",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 12,
+      "cell_id": "e4880b78-3357-5803-ac9f-26e5c1ad5275",
+      "ordinal": 428,
+      "scenario_id": "compound",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 12,
+      "cell_id": "ad5219c0-ba3d-546a-b50f-09616ca006e8",
+      "ordinal": 429,
+      "scenario_id": "compound",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 12,
+      "cell_id": "a1213051-f268-50a5-b417-8bff04035fef",
+      "ordinal": 430,
+      "scenario_id": "compound",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 12,
+      "cell_id": "ad7c2cea-fcd5-555a-a11a-c9daaab1d4e3",
+      "ordinal": 431,
+      "scenario_id": "compound",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-high"
+    },
+    {
+      "block": 12,
+      "cell_id": "e0a75db1-f932-5037-92ff-039a981e895e",
+      "ordinal": 432,
+      "scenario_id": "compound",
+      "strategy": "static",
+      "traffic_profile_id": "video-high"
+    }
+  ],
+  "config_sha256": "385ec42b4866719d9cb51f7b7a17216210cb9829d69a1712e773c07337955ce0",
+  "dataset_id": "main-20260804",
+  "design": "randomised-complete-block",
+  "expected_cells": 432,
+  "schedule_seed": 20260803,
+  "schema_version": "2.0.0",
+  "source": "config/system_config.yaml"
+}

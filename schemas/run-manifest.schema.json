@@ -1,0 +1,142 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/adaptive-vpn/run-manifest-v1.2.schema.json",
+  "title": "Adaptive VPN run manifest v1.2",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "cell_id",
+    "attempt_id",
+    "attempt_number",
+    "supersedes_attempt_id",
+    "campaign_stage",
+    "schedule_sha256",
+    "dataset_id",
+    "strategy",
+    "scenario",
+    "traffic_profile",
+    "block",
+    "schedule_seed",
+    "ordinal",
+    "config_sha256",
+    "experimental_unit",
+    "provenance",
+    "status",
+    "failure_reason",
+    "finalised_at_utc",
+    "evidence_sha256"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.2.0"},
+    "cell_id": {
+      "type": "string",
+      "format": "uuid",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-5[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "attempt_id": {
+      "type": "string",
+      "format": "uuid",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "attempt_number": {"type": "integer", "minimum": 1},
+    "supersedes_attempt_id": {
+      "anyOf": [
+        {"type": "null"},
+        {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+        }
+      ]
+    },
+    "campaign_stage": {"enum": ["smoke", "pilot", "main"]},
+    "schedule_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dataset_id": {"type": "string", "minLength": 1, "pattern": "\\S"},
+    "strategy": {"enum": ["static", "threshold", "adaptive"]},
+    "scenario": {"type": "string", "minLength": 1, "pattern": "\\S"},
+    "traffic_profile": {"type": "string", "minLength": 1, "pattern": "\\S"},
+    "block": {"type": "integer", "minimum": 1},
+    "schedule_seed": {"type": "integer", "minimum": 0, "maximum": 9223372036854775807},
+    "ordinal": {"type": "integer", "minimum": 1},
+    "config_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "experimental_unit": {"const": "run"},
+    "provenance": {
+      "type": "object",
+      "required": ["git_commit"],
+      "properties": {
+        "git_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"}
+      },
+      "additionalProperties": true
+    },
+    "status": {"enum": ["complete", "incomplete"]},
+    "failure_reason": {"type": ["string", "null"]},
+    "finalised_at_utc": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{6}Z$"
+    },
+    "evidence_sha256": {
+      "type": "object",
+      "required": ["packets.csv", "events.jsonl"],
+      "propertyNames": {
+        "allOf": [
+          {"pattern": "^[^/\\\\\\u0000]+$"},
+          {"not": {"enum": [".", "..", "manifest.json", "SHA256SUMS"]}}
+        ]
+      },
+      "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"attempt_number": {"const": 1}}},
+      "then": {"properties": {"supersedes_attempt_id": {"type": "null"}}}
+    },
+    {
+      "if": {"properties": {"attempt_number": {"minimum": 2}}},
+      "then": {
+        "properties": {
+          "supersedes_attempt_id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+          }
+        }
+      }
+    },
+    {
+      "if": {"properties": {"status": {"const": "complete"}}},
+      "then": {"properties": {"failure_reason": {"type": "null"}}}
+    },
+    {
+      "if": {"properties": {"status": {"const": "incomplete"}}},
+      "then": {
+        "properties": {
+          "failure_reason": {"type": "string", "minLength": 1, "pattern": "\\S"}
+        }
+      }
+    }
+  ],
+  "x-resource-limits": {
+    "maximum_utf8_bytes": 1048576,
+    "maximum_json_depth": 32,
+    "maximum_json_nodes": 10000
+  },
+  "x-secret-boundary": {
+    "normalization": ["trim", "lowercase", "hyphen_to_underscore"],
+    "forbidden_normalized_keys": [
+      "access_token",
+      "api_secret",
+      "auth_token",
+      "client_secret",
+      "credential",
+      "credentials",
+      "password",
+      "private_key"
+    ],
+    "forbidden_normalized_suffixes": ["_credential"],
+    "scope": "all_nested_object_keys"
+  },
+  "x-bundle-policy": "evidence-bundle-policy.schema.json",
+  "additionalProperties": false
+}

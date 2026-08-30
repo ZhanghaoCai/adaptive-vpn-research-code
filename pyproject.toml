@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "adaptive-vpn-research"
+version = "0.1.0"
+description = "Reproducible research tooling for adaptive VPN path selection"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+authors = [
+    {name = "Zhanghao Cai"},
+]
+
+[project.optional-dependencies]
+runtime = [
+    "jsonschema>=4.26,<5",
+    "pydantic>=2.9,<3",
+    "PyYAML>=6.0,<7",
+    "psutil>=5.9,<8",
+]
+analysis = [
+    "matplotlib>=3.7,<4",
+    "numpy>=1.24,<3",
+    "pandas>=2.0,<3",
+    "scipy>=1.10,<2",
+    "seaborn>=0.12,<1",
+    "statsmodels>=0.14,<1",
+]
+webrtc = [
+    "selenium>=4.26,<5",
+    "websockets>=14,<16",
+]
+dev = [
+    "pytest>=8.3,<9",
+]
+
+[project.scripts]
+adaptive-vpn = "adaptive_vpn.cli:main"
+
+[tool.setuptools]
+packages = ["adaptive_vpn", "analysis"]
+package-dir = {adaptive_vpn = "src/adaptive_vpn", analysis = "analysis"}
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "drvfs: WSL DrvFs filesystem capability and transaction tests",
+    "netns: root-only tests that create bounded Linux network namespaces",
+]

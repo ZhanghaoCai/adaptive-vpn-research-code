@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/adaptive-vpn/packet.schema.json",
+  "title": "Adaptive VPN packet row",
+  "x-evidence-schema-version": "1.1.0",
+  "type": "object",
+  "required": [
+    "sequence",
+    "path_id",
+    "sent_ns",
+    "received_ns",
+    "status",
+    "rtt_ms",
+    "datagram_bytes"
+  ],
+  "properties": {
+    "sequence": {"type": "integer", "minimum": 0, "maximum": 18446744073709551615},
+    "path_id": {"type": "string", "minLength": 1, "pattern": "\\S"},
+    "sent_ns": {"type": "integer", "minimum": 0, "maximum": 18446744073709551615},
+    "received_ns": {
+      "type": ["integer", "null"],
+      "minimum": 0,
+      "maximum": 18446744073709551615
+    },
+    "status": {"enum": ["received", "timeout"]},
+    "rtt_ms": {"type": ["number", "null"], "minimum": 0},
+    "datagram_bytes": {"type": "integer", "minimum": 32, "maximum": 65507}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"status": {"const": "received"}}},
+      "then": {
+        "properties": {
+          "received_ns": {"type": "integer"},
+          "rtt_ms": {"type": "number"}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"status": {"const": "timeout"}}},
+      "then": {
+        "properties": {
+          "received_ns": {"type": "null"},
+          "rtt_ms": {"type": "null"}
+        }
+      }
+    }
+  ],
+  "x-runtime-validator": {
+    "required": true,
+    "python_entrypoint": "adaptive_vpn.collector.validate_evidence_bundle",
+    "invocation_scope": "containing-evidence-bundle",
+    "acceptance_condition": "result.valid == true",
+    "json_schema_scope": "artifact-structure-only",
+    "json_schema_alone_is_sufficient": false
+  },
+  "x-invariants": {
+    "enforcement": "runtime-required",
+    "standard_json_schema_enforces": false,
+    "rules": [
+      {
+        "id": "received-time-order",
+        "when": {"status": "received"},
+        "expression": "received_ns >= sent_ns"
+      },
+      {
+        "id": "exact-rtt",
+        "when": {"status": "received"},
+        "expression": "rtt_ms == (received_ns - sent_ns) / 1000000"
+      }
+    ]
+  },
+  "x-bundle-policy": "evidence-bundle-policy.schema.json",
+  "additionalProperties": false
+}

@@ -1,0 +1,108 @@
+{
+  "campaign_stage": "pilot",
+  "cells": [
+    {
+      "block": 1,
+      "cell_id": "996ef4c4-1a57-5f39-8628-c61e49796539",
+      "ordinal": 1,
+      "scenario_id": "baseline",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 1,
+      "cell_id": "cf10dce3-86c7-5eb6-b3ae-617e484dcbbf",
+      "ordinal": 2,
+      "scenario_id": "baseline",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 1,
+      "cell_id": "73eb9aba-aa6d-5849-ae29-20eee71ffc4f",
+      "ordinal": 3,
+      "scenario_id": "baseline",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 1,
+      "cell_id": "ef7fc8f2-2753-507d-b238-fb4412feaca8",
+      "ordinal": 4,
+      "scenario_id": "compound",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 1,
+      "cell_id": "de59a60b-869d-57e7-886c-f7ffa0b07c76",
+      "ordinal": 5,
+      "scenario_id": "compound",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 1,
+      "cell_id": "718da1bd-0961-5066-b931-64563fd3e3a1",
+      "ordinal": 6,
+      "scenario_id": "compound",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 2,
+      "cell_id": "04d07f08-4397-5052-8e1c-613e68791adb",
+      "ordinal": 7,
+      "scenario_id": "baseline",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 2,
+      "cell_id": "9bff88c4-8802-5bb2-8f43-f3588510e935",
+      "ordinal": 8,
+      "scenario_id": "baseline",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 2,
+      "cell_id": "fb99bb3a-2471-5193-bb27-4e70628920ee",
+      "ordinal": 9,
+      "scenario_id": "baseline",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 2,
+      "cell_id": "c84d98d7-d403-5fea-914b-b59955b603f3",
+      "ordinal": 10,
+      "scenario_id": "compound",
+      "strategy": "static",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 2,
+      "cell_id": "6fc093a8-02ee-5ea7-926b-00391e3a709d",
+      "ordinal": 11,
+      "scenario_id": "compound",
+      "strategy": "threshold",
+      "traffic_profile_id": "video-low"
+    },
+    {
+      "block": 2,
+      "cell_id": "0aa77f38-263d-52b9-8d8e-d208e6505861",
+      "ordinal": 12,
+      "scenario_id": "compound",
+      "strategy": "adaptive",
+      "traffic_profile_id": "video-low"
+    }
+  ],
+  "config_sha256": "790ce2b472341ecbdfdee875242d5cc73dccd958eee7a1f544a782e45ce51424",
+  "dataset_id": "pilot-20260804",
+  "design": "randomised-complete-block",
+  "expected_cells": 12,
+  "schedule_seed": 20260803,
+  "schema_version": "2.0.0",
+  "source": "config/system_config.yaml"
+}

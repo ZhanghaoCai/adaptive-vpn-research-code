@@ -1,0 +1,5 @@
+include: ../../config/system_config.yaml
+campaign_stage: main
+schedule_path: main.7f9bd96f73c21d85cde860be9cfe436a351d7ae0de74163262298a293bc46570.schedule.json
+schedule_sha256: "7f9bd96f73c21d85cde860be9cfe436a351d7ae0de74163262298a293bc46570"
+max_attempts_per_cell: 2

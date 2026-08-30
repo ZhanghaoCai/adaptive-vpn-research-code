@@ -1,0 +1,209 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://adaptive-vpn.invalid/schemas/analysis-report.schema.json",
+  "title": "Authenticated processed analysis report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "dataset_id",
+    "source_kind",
+    "analysis_parameters",
+    "quality_control",
+    "confirmatory_results",
+    "descriptive_results",
+    "figures"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "dataset_id": {"const": "main-20260804"},
+    "source_kind": {"const": "measured_evidence_bundles"},
+    "analysis_parameters": {"$ref": "#/$defs/parameters"},
+    "quality_control": {"$ref": "#/$defs/quality_control"},
+    "confirmatory_results": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {"$ref": "#/$defs/confirmatory_result"}
+    },
+    "descriptive_results": {
+      "type": "array",
+      "minItems": 252,
+      "maxItems": 252,
+      "items": {"$ref": "#/$defs/descriptive_result"}
+    },
+    "figures": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^figures/[a-z0-9-]+\\.(png|pdf)$"}
+    }
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "parameters": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "experimental_unit",
+        "pairing_keys",
+        "expected_run_count",
+        "expected_strategies",
+        "bootstrap_samples",
+        "bootstrap_seed",
+        "multiple_testing",
+        "confirmatory_alpha",
+        "analysis_plan",
+        "analysis_plan_sha256",
+        "confirmatory_family",
+        "registered_schedule",
+        "registered_schedule_sha256",
+        "legacy_unregistered_schedule"
+      ],
+      "properties": {
+        "experimental_unit": {"const": "complete_run"},
+        "pairing_keys": {"const": ["block", "scenario", "traffic_profile"]},
+        "expected_run_count": {"const": 432},
+        "expected_strategies": {"const": ["static", "threshold", "adaptive"]},
+        "bootstrap_samples": {"const": 10000},
+        "bootstrap_seed": {"const": 20260803},
+        "multiple_testing": {"const": "Holm"},
+        "confirmatory_alpha": {"const": 0.05},
+        "analysis_plan": {"type": "string", "minLength": 1},
+        "analysis_plan_sha256": {"$ref": "#/$defs/sha256"},
+        "confirmatory_family": {
+          "const": [
+            "adaptive-vs-static-loss",
+            "adaptive-vs-static-mean-rtt",
+            "adaptive-vs-threshold-loss",
+            "adaptive-vs-threshold-mean-rtt"
+          ]
+        },
+        "registered_schedule": {"type": "string", "minLength": 1},
+        "registered_schedule_sha256": {"$ref": "#/$defs/sha256"},
+        "legacy_unregistered_schedule": {"const": false}
+      }
+    },
+    "quality_control": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "status",
+        "expected_run_count",
+        "observed_run_count",
+        "accepted_run_count",
+        "incomplete_run_count",
+        "sent_packet_count",
+        "received_packet_count",
+        "timed_out_packet_count",
+        "missing_packet_count",
+        "protocol_violations",
+        "paired_cells",
+        "outliers",
+        "outlier_policy",
+        "attempt_identity_model",
+        "retained_attempt_count",
+        "incomplete_predecessor_attempt_count",
+        "terminal_attempt_count",
+        "attempt_budget_exhausted_cell_count"
+      ],
+      "properties": {
+        "schema_version": {"const": "1.0.0"},
+        "status": {"const": "pass"},
+        "expected_run_count": {"const": 432},
+        "observed_run_count": {"const": 432},
+        "accepted_run_count": {"const": 432},
+        "incomplete_run_count": {"const": 0},
+        "sent_packet_count": {"type": "integer", "minimum": 1},
+        "received_packet_count": {"type": "integer", "minimum": 0},
+        "timed_out_packet_count": {"type": "integer", "minimum": 0},
+        "missing_packet_count": {"type": "integer", "minimum": 0},
+        "protocol_violations": {"const": []},
+        "paired_cells": {"type": "array", "minItems": 144, "maxItems": 144},
+        "outliers": {"type": "array"},
+        "outlier_policy": {"const": "report_only_no_automatic_exclusion"},
+        "attempt_identity_model": {"const": "attempt_chain_v1.2"},
+        "retained_attempt_count": {"type": "integer", "minimum": 432, "maximum": 864},
+        "incomplete_predecessor_attempt_count": {"type": "integer", "minimum": 0, "maximum": 432},
+        "terminal_attempt_count": {"const": 432},
+        "attempt_budget_exhausted_cell_count": {"type": "integer", "minimum": 0, "maximum": 432}
+      }
+    },
+    "confirmatory_result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contrast_id",
+        "endpoint",
+        "metric",
+        "baseline_strategy",
+        "alternative_strategy",
+        "direction",
+        "pair_count",
+        "block_count",
+        "inference_unit",
+        "mean_difference",
+        "bootstrap_95_lower",
+        "bootstrap_95_upper",
+        "paired_standardised_effect",
+        "effect_status",
+        "wilcoxon_statistic",
+        "p_value_raw",
+        "p_value_holm",
+        "test_status"
+      ],
+      "properties": {
+        "contrast_id": {"type": "string", "minLength": 1},
+        "endpoint": {"enum": ["loss_pct", "mean_rtt_ms"]},
+        "metric": {"enum": ["loss_pct", "rtt_mean_ms"]},
+        "baseline_strategy": {"enum": ["static", "threshold"]},
+        "alternative_strategy": {"const": "adaptive"},
+        "direction": {"type": "string", "minLength": 1},
+        "pair_count": {"const": 144},
+        "block_count": {"const": 12},
+        "inference_unit": {"const": "block_mean_of_paired_cell_differences"},
+        "mean_difference": {"type": "number"},
+        "bootstrap_95_lower": {"type": "number"},
+        "bootstrap_95_upper": {"type": "number"},
+        "paired_standardised_effect": {"type": ["number", "null"]},
+        "effect_status": {"type": "string", "minLength": 1},
+        "wilcoxon_statistic": {"type": ["number", "null"]},
+        "p_value_raw": {"type": "number", "minimum": 0, "maximum": 1},
+        "p_value_holm": {"type": "number", "minimum": 0, "maximum": 1},
+        "test_status": {"type": "string", "minLength": 1}
+      }
+    },
+    "descriptive_result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scenario",
+        "traffic_profile",
+        "strategy",
+        "metric",
+        "n",
+        "mean",
+        "standard_deviation",
+        "median",
+        "p95"
+      ],
+      "properties": {
+        "scenario": {"type": "string", "minLength": 1},
+        "traffic_profile": {"type": "string", "minLength": 1},
+        "strategy": {"enum": ["static", "threshold", "adaptive"]},
+        "metric": {"type": "string", "minLength": 1},
+        "n": {"type": "integer", "minimum": 1},
+        "mean": {"type": "number"},
+        "standard_deviation": {"type": ["number", "null"]},
+        "median": {"type": "number"},
+        "p95": {"type": "number"}
+      }
+    }
+  },
+  "x-secret-boundary": {
+    "forbid_recursive_key_names": ["password", "token", "private_key", "credential", "pem"],
+    "forbid_recursive_value_patterns": ["BEGIN [A-Z ]*PRIVATE KEY", "ssh-(rsa|ed25519) [A-Za-z0-9+/]{32,}"]
+  }
+}
